@@ -14,6 +14,7 @@ class User_model extends CI_Model
 
 	public function get_listuser() {
 		$this->db->from('user');
+		$this->db->join('role','user.role_id = role.role_id');
 		$query=$this->db->get();
 		return $query->result();
 	}
@@ -21,7 +22,7 @@ class User_model extends CI_Model
 
 	public function get_by_id($id) {
 		$this->db->from($this->table);
-		$this->db->where('id_user',$id);
+		$this->db->where('user_id',$id);
 		$query = $this->db->get();
 
 		return $query->row();
@@ -38,8 +39,12 @@ class User_model extends CI_Model
 	}
 
 	public function deluser_db($id) {
-		$this->db->where('id_user', $id);
+		$this->db->where('user_id', $id);
 		$this->db->delete($this->table);
+	}
+
+	function getUser($where= ''){
+		return $this->db->query("select * from user $where;");
 	}
 
 
