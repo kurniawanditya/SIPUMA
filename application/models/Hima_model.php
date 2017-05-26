@@ -14,6 +14,9 @@ class Hima_model extends CI_Model
 
 	public function get_listhima() {
 		$this->db->from('hima');
+		$this->db->join('fakultas','hima.fakultas_id = fakultas.fakultas_id');
+		$this->db->join('universitas','hima.universitas_id = universitas.universitas_id');
+		$this->db->join('user','hima.user_id = user.user_id');
 		$query=$this->db->get();
 		return $query->result();
 	}
@@ -21,7 +24,7 @@ class Hima_model extends CI_Model
 
 	public function get_by_id($id) {
 		$this->db->from($this->table);
-		$this->db->where('id_hima',$id);
+		$this->db->where('hima_id',$id);
 		$query = $this->db->get();
 
 		return $query->row();
@@ -38,8 +41,12 @@ class Hima_model extends CI_Model
 	}
 
 	public function delhima_db($id) {
-		$this->db->where('id_hima', $id);
+		$this->db->where('hima_id', $id);
 		$this->db->delete($this->table);
+	}
+
+	function getHima($where= ''){
+		return $this->db->query("select * from hima $where;");
 	}
 
 
