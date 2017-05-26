@@ -21,7 +21,7 @@ class Role_model extends CI_Model
 
 	public function get_by_id($id) {
 		$this->db->from($this->table);
-		$this->db->where('id_role',$id);
+		$this->db->where('role_id',$id);
 		$query = $this->db->get();
 
 		return $query->row();
@@ -38,8 +38,12 @@ class Role_model extends CI_Model
 	}
 
 	public function delrole_db($id) {
-		$this->db->where('id_role', $id);
+		$this->db->where('role_id', $id);
 		$this->db->delete($this->table);
+	}
+
+	function getRole($where= ''){
+		return $this->db->query("select * from role $where;");
 	}
 
 
