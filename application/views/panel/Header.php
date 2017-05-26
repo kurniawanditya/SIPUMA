@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Clip-One - Responsive Admin Template</title>
+		<title><?php echo $title; ?></title>
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -18,21 +18,27 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/fonts/style.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/main.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/main-responsive.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/print.css" type="text/css" media="print"/>
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/fonts/style.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/main.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/main-responsive.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/theme_light.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/print.css" type="text/css" media="print"/>
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
 		<!-- end: MAIN CSS -->
-		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY DATATABLE-->
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/plugins/select2/select2.css" />
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/DataTables/media/css/DT_bootstrap.css" />
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY FORM VALIDATION-->
+		<link rel="stylesheet" href="?php echo base_url();?>assets/admin/plugins/summernote/build/summernote.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -51,7 +57,7 @@
 					<!-- end: RESPONSIVE MENU TOGGLER -->
 					<!-- start: LOGO -->
 					<a class="navbar-brand" href="index.html">
-						<img src="<?php echo base_url();?>assests/frontend/assets/images/logo.png" width="120px" height="30px">
+						<img src="<?php echo base_url();?>assets/admin/images/logo.png" width="120px" height="30px">
 					</a>
 					<!-- end: LOGO -->
 				</div>
@@ -61,13 +67,13 @@
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-								<img src="<?php echo base_url();?>assests/admin/assets/images/ava.png" class="circle-img" alt="">
+								<img src="<?php echo base_url();?>assets/admin/images/ava.png" class="circle-img" alt="">
 								<span class="username"><?php echo $username ?></span>
 								<i class="clip-chevron-down"></i>
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="<?php echo base_url();?>C_Front/logout">
+									<a href="<?php echo base_url();?>Login/logout">
 										<i class="clip-exit"></i>
 										&nbsp;Log Out
 									</a>

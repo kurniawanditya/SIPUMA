@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <!-- start: HEAD -->
 	<head>
-		<title>Clip-One - Responsive Admin Template</title>
+		<title><?php echo $title; ?></title>
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -13,16 +13,16 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/fonts/style.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/main.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/main-responsive.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="<?php echo base_url();?>assests/admin/assets/css/print.css" type="text/css" media="print"/>
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/fonts/style.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/main.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/main-responsive.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/theme_light.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/print.css" type="text/css" media="print"/>
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
@@ -32,7 +32,7 @@
 	<body class="login example1">
 		<div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 			<div class="logo">
-				<img src="<?php echo base_url();?>assests/admin/assets/images/logo_2.png" 
+				<img src="<?php echo base_url();?>assets/admin/images/logo_2.png" 
 							width="270px" heigh="270px">
 			</div>
 			<!-- start: LOGIN BOX -->
@@ -81,23 +81,23 @@
 		<script type="text/javascript" src="assets/plugins/jQuery-lib/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/jQuery-lib/2.0.3/jquery.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/jQuery-lib/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/less/less-1.5.0.min.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/js/main.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/less/less-1.5.0.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="<?php echo base_url();?>assests/admin/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="<?php echo base_url();?>assests/admin/assets/js/login.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="<?php echo base_url();?>assets/admin/js/login.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

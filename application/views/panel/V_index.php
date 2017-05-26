@@ -9,10 +9,10 @@
 					</div>
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
-					
+
 					<ul class="main-navigation-menu">
 						<li>
-							<a href="#"><i class="clip-home-3"></i>
+							<a href="<?php echo base_url()?>Dashboard"><i class="clip-home-3"></i>
 								<span class="title"> Dashboard </span><span class="selected"></span>
 							</a>
 						</li>
@@ -28,7 +28,7 @@
 										<span class="badge badge-new">new</span>
 									</a>
 								</li>
-								
+
 								<li>
 									<a href="#">
 										<span class="title">Semua Konten</span>
@@ -37,17 +37,32 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#"><i class="clip-users"></i>
+							<a href="<?php echo base_url()?>Hima"><i class="clip-users"></i>
 								<span class="title">HIMA</span><span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="#"><i class="clip-users"></i>
+							<a href="<?php echo base_url()?>Universitas"><i class="clip-users"></i>
+								<span class="title">Universitas</span><span class="selected"></span>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo base_url()?>Fakultas"><i class="clip-users"></i>
+								<span class="title">Fakultas</span><span class="selected"></span>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo base_url()?>Role"><i class="clip-users"></i>
 								<span class="title">Role</span><span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="#"><i class="clip-history"></i>
+							<a href="<?php echo base_url()?>User"><i class="clip-users"></i>
+								<span class="title">User</span><span class="selected"></span>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo base_url()?>Log"><i class="clip-history"></i>
 								<span class="title">Log History</span><span class="selected"></span>
 							</a>
 						</li>
@@ -56,45 +71,3 @@
 				</div>
 				<!-- end: SIDEBAR -->
 			</div>
-<!-- start: PAGE -->
-			<div class="main-content">
-				<div class="container">
-					<!-- start: PAGE HEADER -->
-					<div class="row">
-						<div class="col-sm-12">
-							<!-- start: PAGE TITLE & BREADCRUMB -->
-							<ol class="breadcrumb">
-								<li>
-									<i class="clip-file"></i>
-									<a href="#">
-										Pages
-									</a>
-								</li>
-								<li class="active">
-									Blank Page
-								</li>
-								<li class="search-box">
-									<form class="sidebar-search">
-										<div class="form-group">
-											<input type="text" placeholder="Start Searching...">
-											<button class="submit">
-												<i class="clip-search-3"></i>
-											</button>
-										</div>
-									</form>
-								</li>
-							</ol>
-							<div class="page-header">
-								<h1>Blank Page <small>blank page</small></h1>
-							</div>
-							<!-- end: PAGE TITLE & BREADCRUMB -->
-						</div>
-					</div>
-					<!-- end: PAGE HEADER -->
-					<!-- start: PAGE CONTENT -->
-					Hallo <?php echo $username ?> anda login sebagai Admin
-					<!-- end: PAGE CONTENT-->
-				</div>
-			</div>
-			<!-- end: PAGE -->
-			
