@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 24, 2017 at 11:24 AM
--- Server version: 5.5.25a
--- PHP Version: 5.4.4
+-- Host: 127.0.0.1
+-- Generation Time: May 27, 2017 at 05:18 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `sipumadb`
@@ -26,14 +26,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `fakultas`
 --
 
-CREATE TABLE IF NOT EXISTS `fakultas` (
-  `fakultas_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `fakultas` (
+  `fakultas_id` int(11) NOT NULL,
   `fakultas_name` varchar(100) NOT NULL,
   `fakultas_desc` text NOT NULL,
   `fakultas_status` enum('Active','Deactive') NOT NULL,
-  `fakultas_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`fakultas_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  `fakultas_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fakultas`
@@ -53,17 +52,16 @@ INSERT INTO `fakultas` (`fakultas_id`, `fakultas_name`, `fakultas_desc`, `fakult
 -- Table structure for table `hima`
 --
 
-CREATE TABLE IF NOT EXISTS `hima` (
-  `hima_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `hima` (
+  `hima_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `hima_name` varchar(100) NOT NULL,
   `hima_desc` text NOT NULL,
   `fakultas_id` int(11) NOT NULL,
   `universitas_id` int(11) NOT NULL,
   `hima_status` enum('Active','Deactive') NOT NULL,
-  `hima_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`hima_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `hima_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hima`
@@ -79,16 +77,23 @@ INSERT INTO `hima` (`hima_id`, `user_id`, `hima_name`, `hima_desc`, `fakultas_id
 -- Table structure for table `posting`
 --
 
-CREATE TABLE IF NOT EXISTS `posting` (
+CREATE TABLE `posting` (
   `posting_id` int(11) NOT NULL,
   `hima_id` int(11) NOT NULL,
   `posting_title` varchar(100) NOT NULL,
   `posting_description` text NOT NULL,
   `posting_image` varchar(50) NOT NULL,
   `posting_status` enum('Publish','Unpublish') NOT NULL,
-  `posting_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`posting_id`)
+  `posting_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `posting`
+--
+
+INSERT INTO `posting` (`posting_id`, `hima_id`, `posting_title`, `posting_description`, `posting_image`, `posting_status`, `posting_create_at`) VALUES
+(1, 1, 'Pengumuman Tes TOEFL', '[Pengumuman Tes TOEFL]\r\nAssalamualaikum wr.wb.\r\nPendaftaran Tes TOEFL (Gelombang 2) dibuka mulai tanggal 26 Mei 2017 sampai tanggal 10 Juni 2017.\r\nBiaya Pendaftaran untuk Tes ToEFL sebesar Rp.55.000.\r\nPembayaran dilakukan pada saat mendaftar.\r\nPendaftaran dapat dilakukan melalui Ibu Gentisya Tri Mardiani di ruang dosen IF, lantai 6 ruang 6014 setiap hari Jumat dan Sabtu, jam 08.30-11.00\r\nPeserta yang mendaftar wajib membawa pas foto berwarna 2x3.\r\nPelaksanaan tes akan dilakukan pada 16-17 Juni 2017.\r\nSetelah tes peserta akan mendapatkan sertifikat yang dapat digunakan sebagai syarat skripsi.\r\nTerima kasih.\r\nWassalamualaikum', 'test.jpg', 'Publish', '2017-05-27 14:39:46'),
+(2, 1, 'Pengumuman Tambahan Mengenai Beasiswa BPPA', 'PENGUMUMAN TAMBAHAN MENGENAI BEASISWA BPPA\r\nBagi mahasiswa yang sudah mengajukan percepatan nilai untuk persyaratan Beasiswa BPPA harap diambil di sekretariat paling lambat hari Jum\'at tanggal 5 Mei 2017 jam 09.00 WIB dan dikembalikan ke Sekretariat (nilai sudah lengkap) paling lambat hari Jum\'at tanggal 5 Mei 2017 jam 11.30 WIB.\r\nPersyaratan beasiswa yang lain dikumpulkan paling lambat hari Jum\'at tanggal 5 Mei 2017 ke Sekretariat IF (Mbak Dama). Pada saat pengumpulan, diharapkan persyaratan yang dibutuhkan sudah lengkap (kecuali transkrip nilai - dikeluarkan oleh prodi), kami tidak menerima pemenuhan persyaratan di luar batas waktu yang telah kami tentukan, karena sekretariat harus follow up laporan ke panitia beasiswa.\r\nDemikian kami sampaikan, kami ucapkan terimakasih.\r\nHormat Kami', 'test.jpg', 'Unpublish', '2017-05-27 14:40:44');
 
 -- --------------------------------------------------------
 
@@ -96,13 +101,12 @@ CREATE TABLE IF NOT EXISTS `posting` (
 -- Table structure for table `role`
 --
 
-CREATE TABLE IF NOT EXISTS `role` (
-  `role_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `role` (
+  `role_id` int(11) NOT NULL,
   `role_name` varchar(50) NOT NULL,
   `role_status` enum('Active','Deactive') NOT NULL,
-  `role_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `role_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `role`
@@ -118,14 +122,13 @@ INSERT INTO `role` (`role_id`, `role_name`, `role_status`, `role_create_at`) VAL
 -- Table structure for table `tabel_log`
 --
 
-CREATE TABLE IF NOT EXISTS `tabel_log` (
-  `log_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tabel_log` (
+  `log_id` int(11) NOT NULL,
   `log_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `log_user` varchar(255) DEFAULT NULL,
   `log_tipe` int(11) DEFAULT NULL,
-  `log_desc` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=142 ;
+  `log_desc` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tabel_log`
@@ -264,7 +267,19 @@ INSERT INTO `tabel_log` (`log_id`, `log_time`, `log_user`, `log_tipe`, `log_desc
 (138, '2017-05-24 04:40:47', 'firman', 0, 'masuk ke sistem'),
 (139, '2017-05-24 04:40:52', 'firman', 1, 'keluar dari sistem'),
 (140, '2017-05-24 04:42:00', 'rudy', 1, 'keluar dari sistem'),
-(141, '2017-05-24 04:42:21', 'sheptian', 0, 'masuk ke sistem');
+(141, '2017-05-24 04:42:21', 'sheptian', 0, 'masuk ke sistem'),
+(142, '2017-05-27 01:59:44', 'sheptian', 0, 'masuk ke sistem'),
+(143, '2017-05-27 02:58:10', 'sheptian', 0, 'masuk ke sistem'),
+(144, '2017-05-27 06:20:02', 'sheptian', 3, 'mengubah data status posting'),
+(145, '2017-05-27 06:20:32', 'sheptian', 3, 'mengubah data status posting'),
+(146, '2017-05-27 06:20:57', 'sheptian', 3, 'mengubah data status posting'),
+(147, '2017-05-27 06:24:29', 'sheptian', 3, 'mengubah data status posting'),
+(148, '2017-05-27 06:25:32', 'sheptian', 3, 'mengubah data status posting'),
+(149, '2017-05-27 06:25:47', 'sheptian', 3, 'mengubah data status posting'),
+(150, '2017-05-27 14:30:38', 'sheptian', 0, 'masuk ke sistem'),
+(151, '2017-05-27 14:45:42', 'sheptian', 0, 'masuk ke sistem'),
+(152, '2017-05-27 15:00:14', 'sheptian', 3, 'mengubah data status posting'),
+(153, '2017-05-27 15:00:28', 'sheptian', 3, 'mengubah data status posting');
 
 -- --------------------------------------------------------
 
@@ -272,14 +287,13 @@ INSERT INTO `tabel_log` (`log_id`, `log_time`, `log_user`, `log_tipe`, `log_desc
 -- Table structure for table `universitas`
 --
 
-CREATE TABLE IF NOT EXISTS `universitas` (
-  `universitas_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `universitas` (
+  `universitas_id` int(11) NOT NULL,
   `universitas_name` varchar(100) NOT NULL,
   `universitas_desc` text NOT NULL,
   `universitas_status` enum('Active','Deactive') NOT NULL,
-  `universitas_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`universitas_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+  `universitas_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `universitas`
@@ -299,15 +313,14 @@ INSERT INTO `universitas` (`universitas_id`, `universitas_name`, `universitas_de
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `role_id` int(11) NOT NULL,
   `user_status` enum('Active','Deactive') NOT NULL,
-  `user_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+  `user_create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -320,6 +333,91 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `role_id`, `user_status`,
 (12, 'tantan', '65c16b4832d2445bb0a3f8841509c887', 2, 'Deactive', '2017-05-18 08:11:55'),
 (19, 'firman', '74bfebec67d1a87b161e5cbcf6f72a4a', 1, 'Active', '2017-05-22 07:10:15');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fakultas`
+--
+ALTER TABLE `fakultas`
+  ADD PRIMARY KEY (`fakultas_id`);
+
+--
+-- Indexes for table `hima`
+--
+ALTER TABLE `hima`
+  ADD PRIMARY KEY (`hima_id`);
+
+--
+-- Indexes for table `posting`
+--
+ALTER TABLE `posting`
+  ADD PRIMARY KEY (`posting_id`);
+
+--
+-- Indexes for table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`role_id`);
+
+--
+-- Indexes for table `tabel_log`
+--
+ALTER TABLE `tabel_log`
+  ADD PRIMARY KEY (`log_id`);
+
+--
+-- Indexes for table `universitas`
+--
+ALTER TABLE `universitas`
+  ADD PRIMARY KEY (`universitas_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fakultas`
+--
+ALTER TABLE `fakultas`
+  MODIFY `fakultas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `hima`
+--
+ALTER TABLE `hima`
+  MODIFY `hima_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `posting`
+--
+ALTER TABLE `posting`
+  MODIFY `posting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `role`
+--
+ALTER TABLE `role`
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `tabel_log`
+--
+ALTER TABLE `tabel_log`
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+--
+-- AUTO_INCREMENT for table `universitas`
+--
+ALTER TABLE `universitas`
+  MODIFY `universitas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

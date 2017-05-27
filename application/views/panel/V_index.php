@@ -30,7 +30,7 @@
 								</li>
 
 								<li>
-									<a href="#">
+									<a href="<?php echo base_url()?>Posting">
 										<span class="title">Semua Konten</span>
 									</a>
 								</li>
