@@ -19,7 +19,7 @@
 									<li class="col-md-3 col-sm-3 col-xs-6 hima-list">
 										<div class="thumbnail">
 											<img class="animate" src="<?php echo base_url(); ?>assets/frontend/images/hima/<?php echo $hima->hima_img; ?>" alt="" data-animation-options='{"animation":"fadeInLeft", "duration":"200"}'>
-											<span class="image-overlay"><a target="_blank" href="#"><i data-original-title="Detail" data-placement="top" class="tooltips clip-stack-2 circle-icon circle-small"></i></a></span>
+											<span class="image-overlay"><a href="<?php echo base_url(); ?>C_Hima/detail_hima/<?php echo $hima->hima_id; ?>"><i data-original-title="Detail" data-placement="top" class="tooltips clip-stack-2 circle-icon circle-small"></i></a></span>
 										</div>
 										<h3><?php echo $hima->hima_name; ?></h3>
 										<div>

@@ -14,6 +14,7 @@ class Hima_model extends CI_Model
 
 	public function get_hima(){
 		return $this->db->get('hima');
+		
 	}
 
 	public function get_himabyid($id){

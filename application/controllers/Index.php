@@ -17,6 +17,6 @@ class Index extends CI_Controller {
 	public function detail_posting($id)
 	{
 		$data['postingid'] = $this->Posting_model->get_postingbyid($id)->result();
-		$this->load->view('Index',$data);
+		$this->load->view('detail_posting',$data);
 	}
 }

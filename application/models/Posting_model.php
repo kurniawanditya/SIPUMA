@@ -18,7 +18,6 @@ class Posting_model extends CI_Model
 		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
 		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
 		return $query;
-
 	}
 
 	public function get_postingbyid($id){
