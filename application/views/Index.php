@@ -33,7 +33,10 @@
 											</h4>
 											<span class="waktu"> <?php echo date('d F Y', strtotime($post->posting_create_at));?></span>
 											<p>
-												<?php echo character_limiter( $post->posting_description,200);?><a href="<?php echo base_url();?>Index/detail_posting/<?php echo $post->posting_id; ?>">Selengkapnya</a>
+												<?php echo character_limiter( $post->posting_description,200);?>
+												<a class="btn btn-dark-grey btn-xs" href="<?php echo base_url();?>Index/detail_posting/<?php echo $post->posting_id; ?>">
+													Selengkapnya <i class="fa fa-arrow-circle-right"></i>
+												</a>
 											</p>
 										</div>
 									</div>
@@ -41,7 +44,12 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="post-meta">
-											<span><a href="#"><i class="fa fa-facebook"></i></a></span>
+											<a href="http://www.facebook.com/sharer.php?u=http://www.kang-cahya.com/p/advertiser-page.html" target="_blank">
+											<button class="btn btn-facebook">
+												<i class="fa fa-facebook"></i>
+												| Share Ke Facebook
+											</button>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -54,7 +62,7 @@
 					<aside class="sidebar">
 						<form>
 							<div class="input-group">
-								<input type="text" id="s" name="s" placeholder="Search..." class="form-control">
+								<input type="text" id="s" name="s" placeholder="Cari Sesuatu..." class="form-control">
 								<span class="input-group-btn">
 									<button class="btn btn-main-color" type="submit">
 										<i class="fa fa-search"></i>
@@ -62,7 +70,7 @@
 							</div>
 						</form>
 						<hr>
-						<h4>Hima List</h4>
+						<h4>List Hima</h4>
 						<ul class="nav nav-list blog-categories">
 							<li>
 								<a href="#">

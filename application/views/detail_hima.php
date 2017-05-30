@@ -30,8 +30,10 @@
 											</h4>
 											<span class="waktu"> <?php echo date('d F Y', strtotime($post->posting_create_at));?></span>
 											<p>
-												<?php echo character_limiter( $post->posting_description,200);?><a href="<?php echo base_url();?>
-												welcome/detail_posting/<?php echo $post->posting_id; ?>">Selengkapnya</a>
+												<?php echo character_limiter( $post->posting_description,200);?>
+												<a class="btn btn-dark-grey btn-xs" href="<?php echo base_url();?>Index/detail_posting/<?php echo $post->posting_id; ?>">
+													Selengkapnya <i class="fa fa-arrow-circle-right"></i>
+												</a>
 											</p>
 										</div>
 									</div>
@@ -39,7 +41,12 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="post-meta">
-											<span><a href="http://www.facebook.com/sharer.php?u=http://www.kang-cahya.com/p/advertiser-page.html" target="_blank">Share To Facebook</a></span>
+											<a href="http://www.facebook.com/sharer.php?u=http://www.kang-cahya.com/p/advertiser-page.html" target="_blank">
+											<button class="btn btn-facebook">
+												<i class="fa fa-facebook"></i>
+												| Share Ke Facebook
+											</button>
+											</a>
 										</div>
 									</div>
 								</div>

@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/theme_light.css" type="text/css" id="skin_color">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/print.css" type="text/css" media="print"/>
+		<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/frontend/images/icon.png">
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
@@ -32,7 +33,7 @@
 	<body class="login example1">
 		<div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 			<div class="logo">
-				<img src="<?php echo base_url();?>assets/admin/images/logo_2.png" 
+				<img src="<?php echo base_url();?>assets/frontend/images/color.png" 
 							width="270px" heigh="270px">
 			</div>
 			<!-- start: LOGIN BOX -->

@@ -50,14 +50,16 @@
 								<div class="col-xs-8 col-md-8 menu-new ">
 									<div class="row">
 										<div class="col-xs-3 col-md-3"></div>
-										<div class="col-xs-2 col-md-2"></div>
-										<div class="col-xs-2 col-md-2">
+										<div class="col-xs-4 col-md-4">
 											<div class="row">
-												<div class="col-xs-6 col-md-6">
+												<div class="col-xs-4 col-md-4">
 													<a href="<?php echo base_url(); ?>"><i class="clip-bulb menu-img"></i></a>
 												</div>
-												<div class="col-xs-6 col-md-6">
+												<div class="col-xs-4 col-md-4">
 													<a href="<?php echo base_url(); ?>C_hima"><i class="clip-paperplane menu-img"></i></a>
+												</div>
+												<div class="col-xs-4 col-md-4">
+													<a href="<?php echo base_url(); ?>LoginHima"><i class="clip-spinner menu-img"></i></a>
 												</div>
 											</div>
 										</div>
