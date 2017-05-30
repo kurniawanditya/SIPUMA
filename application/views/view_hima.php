@@ -16,19 +16,21 @@
 								<ul class="team-list animate-group">
 									<?php 
 									 foreach ($data as $hima){?>
-									<li class="col-md-3 col-sm-3 col-xs-6 hima-list">
-										<div class="thumbnail">
-											<img class="animate" src="<?php echo base_url(); ?>assets/frontend/images/hima/<?php echo $hima->hima_img; ?>" alt="" data-animation-options='{"animation":"fadeInLeft", "duration":"200"}'>
-											<span class="image-overlay"><a href="<?php echo base_url(); ?>C_Hima/detail_hima/<?php echo $hima->hima_id; ?>"><i data-original-title="Detail" data-placement="top" class="tooltips clip-stack-2 circle-icon circle-small"></i></a></span>
-										</div>
-										<h3><?php echo $hima->hima_name; ?></h3>
-										<div>
-											Universitas Komputer Indonesia
-										</div>
-										<div itemprop="description" class="team-member-description">
-											<p>
-												<?php echo $hima->hima_desc; ?>
-											</p>
+									<li class="col-md-12 col-sm-12 col-xs-12 hima-list">
+										<div class="row">
+											<div class="col-md-5">
+												<div class="thumbnail">
+													<img class="img-responsive imghima" src="<?php echo base_url(); ?>assets/frontend/images/hima/<?php echo $hima->hima_img; ?>" alt="">
+												</div>
+											</div>
+											<div class="col-md-7">
+												<h3><a href="<?php echo base_url(); ?>C_Hima/detail_hima/<?php echo $hima->hima_id; ?>"><?php echo $hima->hima_name; ?></a></h3>
+												<div itemprop="description" class="team-member-description">
+													<p>
+														<?php echo $hima->hima_desc; ?>
+													</p>
+												</div>
+											</div>
 										</div>
 									</li>	
 									<?php } ?>							

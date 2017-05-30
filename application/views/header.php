@@ -18,7 +18,7 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link href="<?php echo base_url(); ?>assets/frontend/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="<?php echo base_url(); ?>assets/frontend/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/plugins/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/fonts/style.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/plugins/animate.css/animate.min.css">
@@ -46,24 +46,24 @@
 					<div class="row">
 						<div class="col-xs-12 col-md-12">
 							<div class="row">
-								<div class="col-xs-4 col-md-4"><a href="<?php echo base_url(); ?>"><img class="img-responsive logoutama" src="<?php echo base_url(); ?>assets/frontend/images/color.png"></div>
-								<div class="col-xs-8 col-md-8 menu-new ">
+								<div class="col-md-6 col-xs-6"><a href="<?php echo base_url(); ?>"><img class="img-responsive logoutama" src="<?php echo base_url(); ?>assets/frontend/images/color.png"></div>
+								<div class="col-md-6 col-xs-6 menu-new">
 									<div class="row">
-										<div class="col-xs-3 col-md-3"></div>
-										<div class="col-xs-4 col-md-4">
+										<div class="col-xs-1 col-md-3"></div>
+										<div class="col-xs-10 col-md-4">
 											<div class="row">
-												<div class="col-xs-4 col-md-4">
+												<div class="col-xs-1 col-md-4">
 													<a href="<?php echo base_url(); ?>"><i class="clip-bulb menu-img"></i></a>
 												</div>
-												<div class="col-xs-4 col-md-4">
+												<div class="col-xs-1 col-md-4">
 													<a href="<?php echo base_url(); ?>C_hima"><i class="clip-paperplane menu-img"></i></a>
 												</div>
-												<div class="col-xs-4 col-md-4">
+												<div class="col-xs-1 col-md-4">
 													<a href="<?php echo base_url(); ?>LoginHima"><i class="clip-spinner menu-img"></i></a>
 												</div>
 											</div>
 										</div>
-										<div class="col-xs-5 col-md-5"></div>
+										<div class="col-xs-1 col-md-5"></div>
 										
 									</div>		
 								</div>

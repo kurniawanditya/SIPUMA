@@ -57,7 +57,7 @@
 					<!-- end: RESPONSIVE MENU TOGGLER -->
 					<!-- start: LOGO -->
 					<a class="navbar-brand" href="index.html">
-						<img src="<?php echo base_url();?>assets/admin/images/logo.png" width="120px" height="30px">
+						<img src="<?php echo base_url();?>assets/frontend/images/color.png" width="120px" height="30px">
 					</a>
 					<!-- end: LOGO -->
 				</div>

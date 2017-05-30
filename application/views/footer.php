@@ -1,15 +1,15 @@
 <footer id="footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-1">
+			<div class="col-md-12">
 				<a class="logo" href="index.html">
-					<img class="img-responsive" src="<?php echo base_url(); ?>assets/frontend/images/color.png">
+					<img class="img-responsive img-footer" src="<?php echo base_url(); ?>assets/frontend/images/color.png">
 				</a>
-			</div>
-			<div class="col-md-7">
 				<p>
 					&copy; Copyright 2016 SIPUMA All Rights Reserved.
 				</p>
+			</div>
+			<div class="col-md-7">
 			</div>
 		</div>
 	</div>

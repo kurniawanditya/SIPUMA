@@ -31,10 +31,10 @@ class Hima extends CI_Controller {
 		$data['title'] = 'SIPUMA | HIMA';
 		$data['pages'] = 'Hima';
 		$data['penjelasan'] = ' create,read,update & delete';
-		$data['himas']=$this->hima_model->get_listhima();
-		$data['universitas']=$this->universitas_model->get_listuniversitas();
-		$data['fakultas']=$this->fakultas_model->get_listfakultas();
-		$data['users']=$this->user_model->get_listuser();
+		$data['himas']=$this->Hima_model->get_listhima();
+		$data['universitas']=$this->Universitas_model->get_listuniversitas();
+		$data['fakultas']=$this->Fakultas_model->get_listfakultas();
+		$data['users']=$this->User_model->get_listuser();
 
 		$this->load->view('panel/Header',$data);
 		$this->load->view('panel/V_index');
@@ -60,7 +60,7 @@ class Hima extends CI_Controller {
 				'hima_status' => $this->input->post('hima_status'),
 			);
 
-			$insert = $this->hima_model->addhima_db($data);
+			$insert = $this->Hima_model->addhima_db($data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("add", "menambah data hima");
 		}
@@ -75,7 +75,7 @@ class Hima extends CI_Controller {
 	}
 
 	public function ajax_edit($id) {
-		$data = $this->hima_model->get_by_id($id);
+		$data = $this->Hima_model->get_by_id($id);
 		echo json_encode($data);
 	}
 
@@ -97,7 +97,7 @@ class Hima extends CI_Controller {
 				'hima_status' => $this->input->post('hima_status'),
 				'hima_create_at' => $this->input->post('hima_create_at'),
 			);
-			$this->hima_model->updhima_db(array('hima_id' => $this->input->post('hima_id')), $data);
+			$this->Hima_model->updhima_db(array('hima_id' => $this->input->post('hima_id')), $data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("edit", "mengubah data hima");
 		}
@@ -111,7 +111,7 @@ class Hima extends CI_Controller {
 	}
 
 	public function del_hima($id) {
-		$this->hima_model->delhima_db($id);
+		$this->Hima_model->delhima_db($id);
 		echo json_encode(array("status" => TRUE));
 		$this->helper_log("delete", "menghapus data hima");
 	}

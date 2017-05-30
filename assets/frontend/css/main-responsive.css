@@ -1,6 +1,11 @@
 /* ---------------------------------------------------------------------- */
 /*	From Medium Devices Up To Larger Devices
  /* ---------------------------------------------------------------------- */
+@media (min-width: 1200px){
+	.container {
+			width: 50% !important;
+	}
+}
 @media (min-width: 992px) {
 	body {
 		padding-top: 129px;
