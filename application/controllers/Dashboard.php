@@ -53,7 +53,7 @@ class Dashboard extends CI_Controller{
 	    $this->load->view('panel/V_dashboard',$data2);
 	    $this->load->view('panel/Footer');
     
-  }
+  	}
 
 
-	}
+}

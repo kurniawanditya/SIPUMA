@@ -3,16 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Hima extends CI_Controller {
 
-	 public function __construct() {
+	public function __construct() {
  		parent::__construct();
 		$this->load->library('form_validation');
     	$this->load->library('session');
     	$this->load->helper('security');
 		$this->load->helper('url');
- 		$this->load->model('hima_model');
-		$this->load->model('universitas_model');
-		$this->load->model('fakultas_model');
-		$this->load->model('user_model');
+        $this->load->helper('text');
+ 		$this->load->model('Hima_model');
+		$this->load->model('Universitas_model');
+		$this->load->model('Fakultas_model');
+		$this->load->model('User_model');
 
 		$sudah_login = $this->session->userdata('sudah_login');
 	    $data['role_id'] = $this->session->userdata('role_id');
@@ -23,31 +24,30 @@ class Hima extends CI_Controller {
 	    }
 	}
 
-
 	public function index() {
-	  $sudah_login = $this->session->userdata('sudah_login');
-	  $data['role_id'] = $this->session->userdata('role_id');
-	  $data['username'] = $this->session->userdata('username');
-	  $data['title'] = 'SIPUMA | HIMA';
-	  $data['pages'] = 'Hima';
-	  $data['penjelasan'] = ' create,read,update & delete';
-	  $data['himas']=$this->hima_model->get_listhima();
-	  $data['universitas']=$this->universitas_model->get_listuniversitas();
-	  $data['fakultas']=$this->fakultas_model->get_listfakultas();
-	  $data['users']=$this->user_model->get_listuser();
+		$sudah_login = $this->session->userdata('sudah_login');
+		$data['role_id'] = $this->session->userdata('role_id');
+		$data['username'] = $this->session->userdata('username');
+		$data['title'] = 'SIPUMA | HIMA';
+		$data['pages'] = 'Hima';
+		$data['penjelasan'] = ' create,read,update & delete';
+		$data['himas']=$this->hima_model->get_listhima();
+		$data['universitas']=$this->universitas_model->get_listuniversitas();
+		$data['fakultas']=$this->fakultas_model->get_listfakultas();
+		$data['users']=$this->user_model->get_listuser();
 
-      $this->load->view('panel/Header',$data);
-      $this->load->view('panel/V_index');
-      $this->load->view('panel/V_hima');
-      $this->load->view('panel/Footer');
+		$this->load->view('panel/Header',$data);
+		$this->load->view('panel/V_index');
+		$this->load->view('panel/V_hima');
+		$this->load->view('panel/Footer');
 	}
 
 	public function add_hima() {
-	 $this->form_validation->set_rules('hima_name','hima name','required|min_length[4]');
-	 $this->form_validation->set_rules('hima_desc','hima description','required');
-	 $this->form_validation->set_rules('fakultas_id','fakultas id','required');
-	 $this->form_validation->set_rules('universitas_id','universitas id','required');
-	 $this->form_validation->set_rules('hima_status','hima status','required');
+		$this->form_validation->set_rules('hima_name','hima name','required|min_length[4]');
+		$this->form_validation->set_rules('hima_desc','hima description','required');
+		$this->form_validation->set_rules('fakultas_id','fakultas id','required');
+		$this->form_validation->set_rules('universitas_id','universitas id','required');
+		$this->form_validation->set_rules('hima_status','hima status','required');
 
 		 if($this->form_validation->run()!=false)
 		 {
@@ -117,37 +117,37 @@ class Hima extends CI_Controller {
 	}
 
 	public function helper_log($tipe = "", $str = ""){
-    $CI =& get_instance();
+	    $CI =& get_instance();
+	 
+	    if (strtolower($tipe) == "login"){
+	        $log_tipe   = 0;
+	    }
+	    elseif(strtolower($tipe) == "logout")
+	    {
+	        $log_tipe   = 1;
+	    }
+	    elseif(strtolower($tipe) == "add"){
+	        $log_tipe   = 2;
+	    }
+	    elseif(strtolower($tipe) == "edit"){
+	        $log_tipe  = 3;
+	    }
+	    else{
+	        $log_tipe  = 4;
+	    }
+	 
+	    // paramter
+	    $param['log_user']      = $CI->session->userdata('username');
+	    $param['log_tipe']      = $log_tipe;
+	    $param['log_desc']      = $str;
+	 
+	    //load model log
+	    $CI->load->model('Log_model');
+	 
+	    //save to database
+	    $CI->Log_model->save_log($param);
  
-    if (strtolower($tipe) == "login"){
-        $log_tipe   = 0;
-    }
-    elseif(strtolower($tipe) == "logout")
-    {
-        $log_tipe   = 1;
-    }
-    elseif(strtolower($tipe) == "add"){
-        $log_tipe   = 2;
-    }
-    elseif(strtolower($tipe) == "edit"){
-        $log_tipe  = 3;
-    }
-    else{
-        $log_tipe  = 4;
-    }
- 
-    // paramter
-    $param['log_user']      = $CI->session->userdata('username');
-    $param['log_tipe']      = $log_tipe;
-    $param['log_desc']      = $str;
- 
-    //load model log
-    $CI->load->model('Log_model');
- 
-    //save to database
-    $CI->Log_model->save_log($param);
- 
-}
+	}
 
 
 }

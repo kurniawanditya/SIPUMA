@@ -12,6 +12,24 @@ class Posting_model extends CI_Model
 		$this->load->database();
 	}
 
+	public function get_posting(){
+		$this->db->select('*');
+		$this->db->from('posting'); //memeilih tabel
+		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
+		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
+		return $query;
+
+	}
+
+	public function get_postingbyid($id){
+		$this->db->select('*');
+		$this->db->from('posting'); //memeilih tabel
+		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
+		$this->db->where('posting.posting_id',$id); 
+		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
+		return $query;
+	}
+
 	public function get_listposting() {
 		$this->db->from('posting');
 		$this->db->join('hima','posting.hima_id = hima.hima_id');
