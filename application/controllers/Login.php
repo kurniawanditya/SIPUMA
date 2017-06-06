@@ -5,12 +5,7 @@ class Login extends CI_Controller{
 
     function __construct(){
     	  parent::__construct();
-      	$this->load->helper('form');
       	$this->load->model('Login_model');
-      	$this->load->library('form_validation');
-      	$this->load->library('session');
-      	$this->load->helper('security');
-
   	}
 
   //method untuk mengecek apakah sudah login atau belum
@@ -32,7 +27,7 @@ class Login extends CI_Controller{
               header('location:'.base_url().'Dashboard');
             }
             else if($role_id == '2'){
-              header('location:'.base_url().'Login/login_hima');
+              header('location:'.base_url().'Hima/dash_hima');
             }
          }
   	}
@@ -52,7 +47,7 @@ class Login extends CI_Controller{
         $this->form_validation->set_rules('password','Password','required|trim|xss_clean');
 
         if ($this->form_validation->run()==FALSE) {// jika validasi terjadi kesalahan maka akan kembali ke halaman awal
-        $this->load->view('login_panel');// ^ dengan menampilkan error
+        $this->load->view('register');// ^ dengan menampilkan error
 
         }else {
             if ($hitung_datadb>0) {
@@ -69,13 +64,12 @@ class Login extends CI_Controller{
                   $this->helper_log('login','masuk ke sistem');
                   redirect('Dashboard');
               }elseif ($this->session->userdata('role_id')=='2' && $this->session->userdata('user_status')=='Active') {
-              	  echo "ini adalah halaman untuk HIMA";
-                  //redirect('C_Front/login_hima');
+                  redirect('Hima/dash_hima');
               }
 
               }else {
                   $this->session->set_flashdata('notif','Gagal! Username atau password salah');
-                 	redirect(base_url('Login'));
+                 	redirect(base_url('Loginhima'));
               }
         }
 
@@ -85,7 +79,7 @@ class Login extends CI_Controller{
     function logout(){
         $this->session->sess_destroy();// menghancurkan session
         $this->helper_log('logout','keluar dari sistem');
-        redirect(base_url('Login'));// melakukan kembali ke fungsi home 
+        redirect(base_url('Loginhima'));// melakukan kembali ke fungsi home 
     }
 
     public function helper_log($tipe = "", $str = ""){

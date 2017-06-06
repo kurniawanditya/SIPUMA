@@ -18,7 +18,9 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="post-image postme">
-											<img class="img-responsive" src="<?php echo base_url(); ?>assets/frontend/images/bg.jpg" />
+											<center>
+											<img class="img-responsive" src="<?php echo base_url(); ?>gambar/<?php echo $post->posting_image;?>" />
+											</center>
 										</div>
 									</div>
 									<div class="col-md-12">

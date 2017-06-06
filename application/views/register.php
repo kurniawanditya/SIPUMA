@@ -2,56 +2,90 @@
 <div class="main-container">
 	<section class="wrapper padding50">
 		<div class="container">
-			<div class="row login-left">
-				<div class="col-md-6 no-padding no-margin login">
-					<h3>Login</h3>
-						<?=form_open('Login/login',array('class'=>'form-login'));?>
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<input type="text" id="name" class="form-control" maxlength="100" data-msg-required="Silahkan isi username anda" value="" name="username" placeholder="Nama Pengguna">
-								</div>
-								<div class="col-md-12">
-									<input type="password" id="password" name="password" class="form-control" maxlength="100" data-msg-required="Kata Sandi Salah" value="" placeholder="Kata Sandi">
-								</div>
-							</div>
-						</div>
-						<?php echo $this->session->flashdata('notif');?>
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<input type="submit" data-loading-text="Loading..." class="btn btn-teal" value="Login">
-								</div>
-							</div>
-						</div>
-					 <?=form_close();?>
+			<div class="row">
+				<div class="col-md-4 no-padding no-margin">
+					<div class="kiri">
+						<h1>
+							LOGIN<br>
+							CONNECT<br>
+							WITH PEOPLE
+						</h1>
+					</div>
 				</div>
-				<div class="col-md-6 no-padding no-margin register">
-					<h2>Sign Up</h2>
-					<form type="post" id="contactForm" action="" novalidate="novalidate">
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="Nama Hima">
-								</div>
-								<div class="col-md-12">
-									<input type="email" id="email" name="email" class="form-control" maxlength="100" data-msg-email="Please enter a valid email address." data-msg-required="Please enter your email address." value="" placeholder="Email Hima">
-								</div>
+				<div class="col-md-8 no-padding no-margin login">
+					<div class="tabs">
+						<ul class="nav nav-tabs">
+							<li class="active" >
+								<a data-toggle="tab" href="#Masuk" class="tab_a"><b> MASUK</b></a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#Daftar" class="tab_a"><b> DAFTAR</b></a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div id="Masuk" class="tab-pane active">
+							<div class="heading">
+          						<span class="heading-subtitle">Masukan nama pengguna dan kata sandi <strong>untuk masuk</strong></span>
+							</div>
+								<?=form_open('Login/login',array('class'=>'form-login'));?>
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-12">
+												<input type="text" id="name" class="form-control inputan" maxlength="100" data-msg-required="Silahkan isi username anda" value="" name="username" placeholder="Nama Pengguna" required>
+											</div>
+											<div class="col-md-12">
+												<input type="password" id="password" name="password" class="form-control inputan" maxlength="100" data-msg-required="Kata Sandi Salah" value=""  placeholder="Kata Sandi" required>
+											</div>
+										</div>
+									</div>
+									<?php echo $this->session->flashdata('notif');?>
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-6 col-sm-12 col-xs-12">
+												<input type="submit" data-loading-text="Loading..." class="btn btn-teal" value="Masuk">
+											</div>
+											<div class="col-md-6 forgot-password">
+												<!-- <a href="#">Lupa Password</a> -->
+											</div>
+										</div>
+									</div>
+								<?=form_close();?>
+							</div>
+							<div id="Daftar" class="tab-pane">
+								<div class="heading">
+          						<span class="heading-subtitle">Daftar sekarang untuk mendapatkan nama pengguna dan kata sandi</span>
+							</div>
+								<?=form_open('C_hima/add_hima',array('class'=>'form-login'));?>
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-12">
+												<input type="text" id="name" class="form-control inputan" maxlength="100" value="" name="hima_name" placeholder="Nama HIMA" required>
+											</div>
+											<div class="col-md-12">
+												<input type="email" id="email" name="hima_email" class="form-control inputan" maxlength="100" placeholder="Email HIMA" required>
+											</div>
+
+											<div class="col-md-12">
+												<input type="file" id="password" name="hima_file" class="form-control inputan" maxlength="100" placeholder="Email HIMA" required>
+											</div>
+											<label class="lab">Sertakan berkas/surat yang mengatakan anda adalah HIMA dari Kampus Anda</label>
+										</div>
+									</div>
+									<?php echo $this->session->flashdata('notif');?>
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-6 col-sm-12 col-xs-12">
+												<input type="submit" data-loading-text="Loading..." class="btn btn-teal" value="Daftar">
+											</div>
+											<div class="col-md-6 forgot-password">
+												<!-- <a href="#">Lupa Password</a> -->
+											</div>
+										</div>
+									</div>
+								<?=form_close();?>
 							</div>
 						</div>
-						<div class="row">
-							<div class="form-group">
-								<div class="col-md-12">
-									<input type="file" id="subject" name="subject" class="form-control" maxlength="100" data-msg-required="Please enter the subject." value="">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<input type="submit" data-loading-text="Loading..." class="btn btn-teal" value="Sign Up">
-							</div>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -5,14 +5,12 @@ Class Posting extends CI_Controller{
 	 public function __construct() 
 	 {
  		parent::__construct();
-		$this->load->helper('url');
+		
  		$this->load->model('user_model');
  		$this->load->model('hima_model');
  		$this->load->model('role_model');
- 		$this->load->model('posting_model');		
-	  	$this->load->library('form_validation');
-	  	$this->load->library('session');
-	  	$this->load->helper('security');
+ 		$this->load->model('Posting_model');		
+	  
 
 	  	//Session
 	  	$sudah_login = $this->session->userdata('sudah_login');
@@ -26,7 +24,6 @@ Class Posting extends CI_Controller{
 
 	public function index() 
 	{
-		$this->load->helper('text');
 	    $data['username'] = $this->session->userdata('username');
 	    $data['title'] = 'SIPUMA | Posting';
 	    $data['pages'] = 'Posting';
@@ -34,7 +31,7 @@ Class Posting extends CI_Controller{
 		$data['users']=$this->user_model->get_listuser();
 		$data['roles']=$this->role_model->get_listrole();
 		$data['hima']=$this->hima_model->get_listhima();
-		$data['posting'] = $this->posting_model->get_listposting();
+		$data['posting'] = $this->Posting_model->get_listposting();
 
 	    $this->load->view('panel/Header',$data);
 	    $this->load->view('panel/V_index');
@@ -44,10 +41,51 @@ Class Posting extends CI_Controller{
 
 	public function ajax_edit($id) 
 	{
-		$data = $this->posting_model->get_by_id($id);
+		$data = $this->Posting_model->get_by_id($id);
 		echo json_encode($data);
 	}
 
+	public function add_posting()
+	{
+		$this->form_validation->set_rules('hima_id','hima id','required');
+		$this->form_validation->set_rules('posting_title','posting title','required');
+		$this->form_validation->set_rules('posting_description','posting description','required');
+
+		if($this->form_validation->run()!=false)
+		{
+			$data = array(
+				
+			);
+
+			$config['upload_path']          = './gambar/';
+			$config['allowed_types']        = 'gif|jpg|png';
+			$config['max_size']             = 200;
+
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('posting_image')) {
+
+		         $posting_image = $this->upload->data();
+
+		         $keterangan = $this->input->post('keterangan', TRUE);
+
+		         $data = array (
+			        'hima_id' => $this->input->post('hima_id'),
+					'posting_title' => $this->input->post('posting_title'),
+					'posting_description' => $this->input->post('posting_description'),
+					'posting_image' => $posting_image['file_name']);
+				 $this->Posting_model->addposting_db($data);
+				 json_encode(array("status" => TRUE));
+				 $this->session->set_flashdata('notif','Berhasil menambahkan Posting');
+				 redirect('Hima/dash_hima');
+				}
+		}	
+
+		else
+		{
+			$this->session->set_flashdata('notif','Gagal memosting');
+
+		}
+	}
 	public function upd_posting() 
 	{
 		
@@ -59,10 +97,10 @@ Class Posting extends CI_Controller{
 				'posting_status' => $this->input->post('posting_status'),
 				'posting_create_at' => $this->input->post('posting_create_at'),
 			);
-			$this->posting_model->updposting_db(array('posting_id' => $this->input->post('posting_id')), $data);
-			echo json_encode(array("status" => TRUE));
+			$this->Posting_model->updposting_db(array('posting_id' => $this->input->post('posting_id')), $data);
+			// echo json_encode(array("status" => TRUE));
 			$this->helper_log("edit", "mengubah data status posting");
-
+			
 		} 
 		else 
 		{
@@ -75,7 +113,7 @@ Class Posting extends CI_Controller{
 
 	public function del_posting($id) 
 	{
-		$this->posting_model->delposting_db($id);
+		$this->Posting_model->delposting_db($id);
 		echo json_encode(array("status" => TRUE));
 		$this->helper_log("delete", "menghapus data user");
 	}

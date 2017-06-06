@@ -5,8 +5,6 @@ class Index extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('Posting_model');
-        $this->load->helper('url');
-        $this->load->helper('text');
 	}
 	public function index()
 	{

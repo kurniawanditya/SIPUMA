@@ -5,12 +5,7 @@ class Loginhima extends CI_Controller{
 
     function __construct(){
     	  parent::__construct();
-      	$this->load->helper('form');
       	$this->load->model('Login_model');
-      	$this->load->library('form_validation');
-      	$this->load->library('session');
-      	$this->load->helper('security');
-
   	}
 
   //method untuk mengecek apakah sudah login atau belum
@@ -32,7 +27,7 @@ class Loginhima extends CI_Controller{
               header('location:'.base_url().'Dashboard');
             }
             else if($role_id == '2'){
-              header('location:'.base_url().'Login/login_hima');
+              header('location:'.base_url().'Hima/dash_hima');
             }
          }
   	}
@@ -69,8 +64,7 @@ class Loginhima extends CI_Controller{
                   $this->helper_log('login','masuk ke sistem');
                   redirect('Dashboard');
               }elseif ($this->session->userdata('role_id')=='2' && $this->session->userdata('user_status')=='Active') {
-              	  echo "ini adalah halaman untuk HIMA";
-                  //redirect('C_Front/login_hima');
+                  redirect('Hima/dash_hima');
               }
 
               }else {

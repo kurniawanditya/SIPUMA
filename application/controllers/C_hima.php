@@ -22,8 +22,6 @@ class C_hima extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('Hima_model');
-        $this->load->helper('url');
-        $this->load->helper('text');
 	}
 	public function index()
 	{
@@ -36,5 +34,27 @@ class C_hima extends CI_Controller {
 		$data['postingid'] = $this->Hima_model->get_postingbyhima($id)->result();
 		$this->load->view('detail_hima',$data);
 
+	}
+	public function add_hima() {
+		$this->form_validation->set_rules('hima_name','hima name','required|min_length[4]');
+		$this->form_validation->set_rules('hima_email','hima email','required|min_length[12]');
+
+		 if($this->form_validation->run()!=false)
+		 {
+			$data = array(
+				'hima_name' =>$this->input->post('hima_name'),
+				'hima_email' => $this->input->post('hima_email'),
+			);
+
+			$insert = $this->Hima_model->addhima_db($data);
+			echo json_encode(array("status" => TRUE)); 
+			$this->session->set_flashdata('notif','Silahkan tunggu 2x24 jam untuk dapatkan konfirmasi di email anda');
+             redirect(base_url('Loginhima'));
+		}
+		else 
+		{
+			  $this->load->view('register');
+		}
+		
 	}
 }

@@ -3061,13 +3061,11 @@ a.namahima:hover{
     overflow: hidden;
     background-color: #fff;
     border: 0em solid #e6e6e6;
-    border-radius: 3px;
     margin-bottom: 20px;
 }
 .post-image.detail{
 	height: auto;
     background-color: #fff;
-    border-radius: 3px;
     margin-bottom: 20px;
 }
 span.waktu {
@@ -3125,53 +3123,59 @@ footer{
     padding: 20px;
     margin-bottom: 20px;
 }
-.login-left{
-	background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 1px;
-    box-shadow: 1px 1px #e6e6e6,
+.kiri{
+	background-color: #569099;
+	padding: 20px;
+	height: 345px;
+	background-image: url("../assets/frontend/images/haha.jpg") no-repeat;
+	display: block !important;
 }
-.login-left .btn{
-	margin:20px 0px 0px 0px;
+.kiri h1{
+	color :#fff;
 }
-.login{
-	margin-top:20px;
-	padding: 20px !important;
+label.lab{
+	margin:10px 0px 0px 50px;
+
+}
+@media (min-width: 200px){
+	.container {
+	    width: 100% !important;
+	}
+	a.tab_a{
+		padding: 20px 40px !important;	
+	}
+	.kiri{
+		display: none !important;
+	}
 }
 
-.register{
-	margin-top:20px;
-	padding: 20px !important;
+@media (min-width: 768px){
+	.container {
+	    width: 100% !important;
+	}
+		.kiri{
+		display: block !important;
+	}
+	
 }
-.img-head{
-	width: 100%;
-	height: 100%;
-	margin-left: -15px;
-}
-input{
-	margin-top: 10px;
+
+@media (min-width: 992px){
+	.container {
+	    width: 75% !important;
+	}
+		.kiri{
+		display: block !important;
+	}
 }
 @media (min-width: 1200px){
 	.container {
 	    width: 50% !important;
 	}
-}
-@media (min-width: 992px){
-	.container {
-	    width: 75% !important;
+	.kiri{
+		display: block !important;
 	}
 }
-@media (min-width: 768px){
-	.container {
-	    width: 100% !important;
-	}
-	
-}
-@media (min-width: 300px){
-	.container {
-	    width: 100% !important;
-	}
-}
+
 .hima-list{
 	background-color: #fff;
     border-radius: 3px;
@@ -3193,4 +3197,51 @@ input{
 }
 .btn-facebook:active{
 	color: #fff;
+}
+a.tab_a{
+	padding: 20px ;
+}
+input.form-control.inputan{
+	margin:5px 0px;
+	height: 50px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 0px;
+	border:0px solid #e6e6e6;
+	border-bottom: 1px solid #E6E6E6;
+}
+.tab-content{
+	padding: 10px;
+}
+.heading{
+	padding: 20px;
+}
+input.btn.btn-teal{
+	width: 100%;
+	margin: 20px 0px;
+	border-radius: 0px;
+	height: 48px;
+    color: #FFF;
+    font-size: 16px;
+}
+input.form-control.inputposting{
+	margin:5px 0px;
+	height: 50px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 0px;
+	border:0px solid #e6e6e6;
+	border-bottom: 1px solid #E6E6E6;
+}
+textarea.form-control.inputposting{
+	margin:5px 0px;
+	height: 50px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 0px;
+	border:0px solid #e6e6e6;
+	border-bottom: 1px solid #E6E6E6;
+}
+input.btn.btn-primary.btn-submit {
+	margin:5px 0px 0px 20px;
 }

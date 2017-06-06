@@ -5,16 +5,7 @@ class Hima extends CI_Controller {
 
 	public function __construct() {
  		parent::__construct();
-		$this->load->library('form_validation');
-    	$this->load->library('session');
-    	$this->load->helper('security');
-		$this->load->helper('url');
-        $this->load->helper('text');
  		$this->load->model('Hima_model');
-		$this->load->model('Universitas_model');
-		$this->load->model('Fakultas_model');
-		$this->load->model('User_model');
-
 		$sudah_login = $this->session->userdata('sudah_login');
 	    $data['role_id'] = $this->session->userdata('role_id');
 	    $data['username'] = $this->session->userdata('username');
@@ -42,6 +33,15 @@ class Hima extends CI_Controller {
 		$this->load->view('panel/Footer');
 	}
 
+	public function dash_hima() {
+		$user_id = $this->session->userdata('user_id');
+		$data['himaid'] = $this->Hima_model->get_himabyuser($user_id)->result();
+		foreach ($data['himaid'] as $key) {
+			$idhima=$key->hima_id;
+		}
+		$data['postingid'] = $this->Hima_model->get_postingbyhima($idhima)->result();
+		$this->load->view('Himadashboard',$data);
+	}
 	public function add_hima() {
 		$this->form_validation->set_rules('hima_name','hima name','required|min_length[4]');
 		$this->form_validation->set_rules('hima_desc','hima description','required');

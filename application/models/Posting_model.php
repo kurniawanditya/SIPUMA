@@ -15,7 +15,8 @@ class Posting_model extends CI_Model
 	public function get_posting(){
 		$this->db->select('*');
 		$this->db->from('posting'); //memeilih tabel
-		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
+		$this->db->join('hima', 'posting.hima_id = hima.hima_id');
+		$this->db->order_by('posting.posting_create_at','desc'); 
 		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
 		return $query;
 	}
@@ -25,6 +26,7 @@ class Posting_model extends CI_Model
 		$this->db->from('posting'); //memeilih tabel
 		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
 		$this->db->where('posting.posting_id',$id); 
+		$this->db->order_by('posting.posting_create_at','desc'); 
 		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
 		return $query;
 	}
@@ -32,6 +34,7 @@ class Posting_model extends CI_Model
 	public function get_listposting() {
 		$this->db->from('posting');
 		$this->db->join('hima','posting.hima_id = hima.hima_id');
+		$this->db->order_by('posting.posting_create_at','desc'); 
 		$query=$this->db->get();
 		return $query->result();
 	}

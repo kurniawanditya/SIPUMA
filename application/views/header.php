@@ -53,13 +53,13 @@
 										<div class="col-xs-10 col-md-4">
 											<div class="row">
 												<div class="col-xs-1 col-md-4">
-													<a href="<?php echo base_url(); ?>"><i class="clip-bulb menu-img"></i></a>
+													<a href="<?php echo base_url(); ?>"><i class="clip-home menu-img"></i></a>
 												</div>
 												<div class="col-xs-1 col-md-4">
-													<a href="<?php echo base_url(); ?>C_hima"><i class="clip-paperplane menu-img"></i></a>
+													<a href="<?php echo base_url(); ?>C_hima"><i class="clip-list menu-img"></i></a>
 												</div>
 												<div class="col-xs-1 col-md-4">
-													<a href="<?php echo base_url(); ?>LoginHima"><i class="clip-spinner menu-img"></i></a>
+													<a href="<?php echo base_url(); ?>LoginHima"><i class="clip-user-4 menu-img"></i></a>
 												</div>
 											</div>
 										</div>

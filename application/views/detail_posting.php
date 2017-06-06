@@ -10,7 +10,7 @@
 							<div class="post-header">
 							  	<div class="row">
 									<div class="col-md-12">
-										<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/hima/<?php echo $post->hima_img; ?>" /><a class="namahima" href="#"><?php echo $post->hima_name?></a>
+										<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/hima/<?php echo $post->hima_img; ?>" /><a class="namahima" href="<?php echo base_url();?>C_Hima/detail_hima/<?php echo $post->hima_id; ?>"><?php echo $post->hima_name?></a>
 									</div>
 								</div>
 							</div>
@@ -18,7 +18,9 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="post-image detail">
-											<img class="img-responsive" src="<?php echo base_url(); ?>assets/frontend/images/bg.jpg" />
+										<center>
+											<img class="img-responsive" src="<?php echo base_url(); ?>gambar/<?php echo $post->posting_image;?>"/>
+										</center>
 										</div>
 									</div>
 									<div class="col-md-12">

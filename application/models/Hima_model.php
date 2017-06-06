@@ -25,11 +25,20 @@ class Hima_model extends CI_Model
 		return $query;
 	}
 
+	public function get_himabyuser($id){
+		$this->db->select('*');
+		$this->db->from('hima'); 
+		$this->db->where('user_id',$id); 
+		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
+		return $query;
+	}
+
 	public function get_postingbyhima($id){
 		$this->db->select('*');
 		$this->db->from('posting'); //memeilih tabel
 		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
-		$this->db->where('posting.hima_id',$id); 
+		$this->db->where('posting.hima_id',$id);
+		$this->db->order_by('posting.posting_create_at','desc'); 
 		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
 		return $query;
 	}
