@@ -14,8 +14,40 @@ class Hima_model extends CI_Model
 
 	public function get_hima(){
 		return $this->db->get('hima');
-		
 	}
+
+	public function get_all_count_byhima($id)
+    {
+    	$this->db->select('count(*) as tol_records');
+		$this->db->from('posting'); //memeilih tabel
+		$this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
+		$this->db->where('posting.hima_id',$id);
+		$this->db->order_by('posting.posting_create_at','desc'); 
+		$result = $this->db->get()->row(); //simpan database yang udah di get alias ambil ke query
+		return $result;
+
+    }
+  //   public function get_all_content($id,$start,$content_per_page)
+  //   {
+    	
+  //   	$this->db->select('*');
+		// $this->db->from('posting'); //memeilih tabel
+		// $this->db->join('hima', 'posting.hima_id = hima.hima_id'); 
+		// $this->db->where('posting.hima_id',$id);
+		// $this->db->order_by('posting.posting_create_at','desc'); 
+		// $limit = "$start,$content_per_page";
+		// $this->db->limit($limit);
+		// $result = $this->db->get()->result(); //simpan database yang udah di get alias ambil ke query
+		// return $result;
+
+  //   }
+    
+    public function get_all_content($id,$start,$content_per_page)
+    {
+        $sql = "SELECT * FROM posting,hima WHERE posting.hima_id=hima.hima_id AND posting.hima_id=$id ORDER BY posting.posting_create_at DESC LIMIT $start,$content_per_page";       
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
 
 	public function get_himabyid($id){
 		$this->db->select('*');

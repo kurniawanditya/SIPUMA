@@ -124,7 +124,7 @@
  /* ---------------------------------------------------------------------- */
 @media (max-width: 767px) {
 	body {
-		padding-top: 50px !important;
+		padding-top: 60px !important;
 	}
 	.navbar-default {
 		position: absolute;

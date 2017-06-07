@@ -638,9 +638,7 @@ body.isMobile .navbar-default {
 }
 .navbar > .container .navbar-brand {
 	padding: 0 10px 0;
-	margin-left: 0;
 	font-family: 'Raleway', sans-serif;
-	font-size: 30px;
 	line-height: inherit;
 	color: #666666;
 }
@@ -662,7 +660,7 @@ body.isMobile .navbar-default {
 	font-size: inherit;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li.dropdown.open > a {
-	border-bottom-width: 2px;
+	border-bottom-width: 0px;
 	border-bottom-style: solid;
 	background: none;
 }
@@ -3004,9 +3002,6 @@ label {
 #style_selector .clear_style {
 	margin-right: 20px;
 }
-.menu-new{
-	margin-top: 10px;
-}
 .menu-utama{
 	margin-top: 10px;
 }
@@ -3017,12 +3012,8 @@ i.menu-img{
 i.menu-img:hover{
 	color:#847d75;
 }
-.navbar.navbar-default.navbar-fixed-top {
-    height: 70px !important;
-}
-img.img-responsive.logoutama {
-    height: 30px;
-    margin-top: 20px !important;
+.logoutama{
+	margin-top:10%;
 }
 .post-header{
     border: 1px solid #e6e6e6;
@@ -3036,10 +3027,15 @@ img.img-responsive.logoutama {
     padding:none;
     margin-bottom: 20px;
 }
-.blog-posts article{
-	margin-top:5px;
-	border: none;
-	margin-bottom:0px;
+.blog-posts{
+	padding: 0px;
+	height: 100%;
+	margin:0px;
+}
+.blog-posts article {
+    border-bottom: 0px solid #DDDDDD;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }
 a.namahima{
 	font-size: 15px;
@@ -3140,32 +3136,45 @@ label.lab{
 @media (min-width: 200px){
 	.container {
 	    width: 100% !important;
+	    padding-top:10px !important;
 	}
 	a.tab_a{
 		padding: 20px 40px !important;	
 	}
+	
 	.kiri{
 		display: none !important;
 	}
 }
 
-@media (min-width: 768px){
+
+@media (min-width: 767px){
 	.container {
 	    width: 100% !important;
 	}
-		.kiri{
+	.kiri{
 		display: block !important;
 	}
 	
 }
+@media (min-width: 768px){
+	.container {
+	    width: 100% !important;
+	}
+	.kiri{
+		display: block !important;
+	}
+
+}	
 
 @media (min-width: 992px){
 	.container {
 	    width: 75% !important;
 	}
-		.kiri{
+	.kiri{
 		display: block !important;
 	}
+	
 }
 @media (min-width: 1200px){
 	.container {
@@ -3174,6 +3183,7 @@ label.lab{
 	.kiri{
 		display: block !important;
 	}
+	
 }
 
 .hima-list{
@@ -3244,4 +3254,20 @@ textarea.form-control.inputposting{
 }
 input.btn.btn-primary.btn-submit {
 	margin:5px 0px 0px 20px;
+}
+ol {
+	margin-top: 0px;
+	padding: 0px;
+}
+#results{
+	margin-top: 0px;
+	padding: 0px;
+}
+section.wrapper {
+    margin: 0px;
+    padding: 0px;
+
+}
+.atas {
+	margin-bottom: 20px;
 }

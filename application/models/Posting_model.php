@@ -12,6 +12,20 @@ class Posting_model extends CI_Model
 		$this->load->database();
 	}
 
+	public function get_all_count()
+    {
+        $sql = "SELECT COUNT(*) as tol_records FROM posting";       
+        $result = $this->db->query($sql)->row();
+        return $result;
+    }
+
+    public function get_all_content($start,$content_per_page)
+    {
+        $sql = "SELECT * FROM posting,hima WHERE posting.hima_id=hima.hima_id ORDER BY posting.posting_create_at DESC LIMIT $start,$content_per_page";       
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+
 	public function get_posting(){
 		$this->db->select('*');
 		$this->db->from('posting'); //memeilih tabel

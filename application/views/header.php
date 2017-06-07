@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Sipuma</title>
+		<title>Sipuma | Sistem Informasi Portal Himpunana Mahasiswa</title>
 		<!-- start: META -->
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta charset="utf-8" />
@@ -18,57 +18,56 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link href="<?php echo base_url(); ?>assets/frontend/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/plugins/bootstrap/css/bootstrap.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/plugins/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/fonts/style.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/plugins/animate.css/animate.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/main.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/main-responsive.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/theme_blue.css" type="text/css" id="skin_color">
-		<!-- end: MAIN CSS -->
-		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/plugins/colorbox/example2/colorbox.css">
 		<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/frontend/images/icon.png">
-		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- start: HTML5SHIV FOR IE8 -->
-		<!--[if lt IE 9]>
-		<script src="assets/plugins/html5shiv.js"></script>
-		<![endif]-->
-		<!-- end: HTML5SHIV FOR IE8 -->
+		
 	</head>
 	<!-- end: HEAD -->
 	<body>
 		<!-- start: HEADER -->
-		<header class="single-menu">
+		<header>
 			<div role="navigation" class="navbar navbar-default navbar-fixed-top">
 				<!-- start: TOP NAVIGATION CONTAINER -->
 				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-md-12">
-							<div class="row">
-								<div class="col-md-6 col-xs-6"><a href="<?php echo base_url(); ?>"><img class="img-responsive logoutama" src="<?php echo base_url(); ?>assets/frontend/images/color.png"></div>
-								<div class="col-md-6 col-xs-6 menu-new">
-									<div class="row">
-										<div class="col-xs-1 col-md-3"></div>
-										<div class="col-xs-10 col-md-4">
-											<div class="row">
-												<div class="col-xs-1 col-md-4">
-													<a href="<?php echo base_url(); ?>"><i class="clip-home menu-img"></i></a>
-												</div>
-												<div class="col-xs-1 col-md-4">
-													<a href="<?php echo base_url(); ?>C_hima"><i class="clip-list menu-img"></i></a>
-												</div>
-												<div class="col-xs-1 col-md-4">
-													<a href="<?php echo base_url(); ?>LoginHima"><i class="clip-user-4 menu-img"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="col-xs-1 col-md-5"></div>
-										
-									</div>		
-								</div>
-							</div>
-						</div>
+					<div class="navbar-header">
+						<!-- start: RESPONSIVE MENU TOGGLER -->
+						<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- end: RESPONSIVE MENU TOGGLER -->
+						<!-- start: LOGO -->
+						<a class="navbar-brand" href="<?php echo base_url(); ?>">
+							<img class="img-responsive logoutama" src="<?php echo base_url(); ?>assets/frontend/images/color.png">
+						</a>
+						<!-- end: LOGO -->
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="<?php echo base_url(); ?>">
+									<i class="clip-home menu-img"></i>
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(); ?>C_hima">
+									<i class="clip-list menu-img"></i>
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(); ?>LoginHima">
+									<i class="clip-user-4 menu-img"></i>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<!-- end: TOP NAVIGATION CONTAINER -->
