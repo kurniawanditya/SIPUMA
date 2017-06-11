@@ -36,14 +36,14 @@
 										<div class="form-group">
 											<div class="col-md-12">
 												<div class="input-group">
-												  <span class="input-group-addon" id="basic-addon1">Email</span>
+												  <span class="input-group-addon" id="basic-addon1">Nama Pengguna</span>
 													<input type="text" id="name" class="form-control " maxlength="100" data-msg-required="Silahkan isi username anda" value="" name="username" required>
 												</div>
 												
 											</div>
 											<div class="col-md-12">
 												<div class="input-group">
-													  <span class="input-group-addon" id="basic-addon1">Kata Sandi</span>
+													  <span class="input-group-addon" id="basic-addon1">Nama Hima</span>
 														<input type="password" id="password" name="password" class="form-control " maxlength="100" data-msg-required="Kata Sandi Salah" required>
 													</div>
 												

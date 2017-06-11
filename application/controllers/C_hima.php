@@ -99,13 +99,13 @@ class C_hima extends CI_Controller {
 			}else{
 				echo "file tidak ada sesuai";
 			}
-				$role_id='2';
-				 $data = array (
-				 	'username' 	  => $this->input->post('hima_email'),
-					'password' 	  => md5($this->input->post('hima_password')),
-					'role_id' 	  => $role_id
-					);
-				 $adduserhima = $this->User_model->adduser_db($data);
+			$role_id='2';
+			 $data = array (
+			 	'username' 	  => $this->input->post('hima_email'),
+				'password' 	  => md5($this->input->post('hima_password')),
+				'role_id' 	  => $role_id
+				);
+			 $adduserhima = $this->User_model->adduser_db($data);
 			if ($adduserhima){
 
 		    $data = array (
@@ -114,7 +114,8 @@ class C_hima extends CI_Controller {
 		        'hima_email' => $this->input->post('hima_email'),
 		        'universitas_id' => $this->input->post('hima_univ'),
 		        'fakultas_id' => $this->input->post('hima_fak'),
-		        'hima_file' => $himafile['file_name']);
+		        'hima_file' => $himafile['file_name']
+		        );
 				$addhima = $this->Hima_model->addhima_db($data);
 			}
 			$this->session->set_flashdata('notif','Silahkan tunggu 2x24 jam untuk dapatkan konfirmasi');
