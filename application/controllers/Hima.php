@@ -9,6 +9,7 @@ class Hima extends CI_Controller {
  		$this->load->model('Universitas_model');
  		$this->load->model('Fakultas_model');
  		$this->load->model('User_model');
+ 		$this->load->model('Email_model');
 		$sudah_login = $this->session->userdata('sudah_login');
 	    $data['role_id'] = $this->session->userdata('role_id');
 	    $data['username'] = $this->session->userdata('username');
@@ -215,6 +216,10 @@ class Hima extends CI_Controller {
 	    //save to database
 	    $CI->Log_model->save_log($param);
  
+	}
+	public function sendemail(){
+
+		$this->Email_model->sendemail();		
 	}
 
 

@@ -9,11 +9,14 @@ class Hima_model extends CI_Model
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->database();
 	}
 
 	public function get_hima(){
-		return $this->db->get('hima');
+		$this->db->select('*');
+		$this->db->from('hima');
+		$this->db->order_by('hima_id','asc');
+		$result = $this->db->get();
+		return $result;
 	}
 
 	public function get_all_count_byhima($id)

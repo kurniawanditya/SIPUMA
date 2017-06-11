@@ -31,7 +31,7 @@ class Index extends CI_Controller {
              				<div class='post-header'>
 							  	<div class='row'>
 									<div class='col-md-12'>
-										<img class='clip-droplet circle-icon circle-bricky animate' src='".base_url()."assets/frontend/images/hima/".$content->hima_img."'/><a class='namahima' href='".base_url()."C_Hima/detail_hima/".$content->hima_id."'>".$content->hima_name."</a>
+										<img class='clip-droplet circle-icon circle-bricky animate' src='".base_url()."assets/frontend/images/photo-profil/".$content->hima_img."'/><a class='namahima' href='".base_url()."C_Hima/detail_hima/".$content->hima_id."'>".$content->hima_name."</a>
 									</div>
 								</div>
 							</div>

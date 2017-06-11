@@ -15,12 +15,12 @@
 							<div class="row">
 								<ul class="team-list animate-group">
 									<?php 
-									 foreach ($data as $hima){?>
+									 foreach ($himalist as $hima){?>
 									<li class="col-md-12 col-sm-12 col-xs-12 hima-list">
 										<div class="row">
 											<div class="col-md-5">
 												<div class="thumbnail">
-													<img class="img-responsive imghima" src="<?php echo base_url(); ?>assets/frontend/images/hima/<?php echo $hima->hima_img; ?>" alt="">
+													<img class="img-responsive imghima" src="<?php echo base_url()."assets/frontend/images/photo-profil/".$hima->hima_img; ?>">
 												</div>
 											</div>
 											<div class="col-md-7">
