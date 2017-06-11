@@ -18,7 +18,7 @@ Class Posting extends CI_Controller{
 	    $data['username'] = $this->session->userdata('username');
 
 	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
+	      redirect(base_url('LoginHima'));
 	    }
 	}
 
@@ -52,32 +52,30 @@ Class Posting extends CI_Controller{
 		$this->form_validation->set_rules('posting_description','posting description','required');
 
 		if($this->form_validation->run()!=false)
-		{
-			$data = array(
-				
-			);
+		{	 
 
+		
 			$config['upload_path']          = './gambar/';
 			$config['allowed_types']        = 'gif|jpg|png';
 			$config['max_size']             = 200;
 
 			$this->load->library('upload', $config);
-			if ($this->upload->do_upload('posting_image')) {
-
-		         $posting_image = $this->upload->data();
-
-		         $keterangan = $this->input->post('keterangan', TRUE);
-
-		         $data = array (
-			        'hima_id' => $this->input->post('hima_id'),
-					'posting_title' => $this->input->post('posting_title'),
-					'posting_description' => $this->input->post('posting_description'),
-					'posting_image' => $posting_image['file_name']);
-				 $this->Posting_model->addposting_db($data);
-				 json_encode(array("status" => TRUE));
-				 $this->session->set_flashdata('notif','Berhasil menambahkan Posting');
-				 redirect('Hima/dash_hima');
-				}
+			if ($this->upload->do_upload('input-file-preview')) {
+		        $posting_image = $this->upload->data();
+				$keterangan = $this->input->post('keterangan', TRUE);
+			}
+			else{
+				echo "gambar tidak ada";
+			}
+		    $data = array (
+		        'hima_id' => $this->input->post('hima_id'),
+				'posting_title' => $this->input->post('posting_title'),
+				'posting_description' => $this->input->post('posting_description'),
+				'posting_image' => $posting_image['file_name']);
+			 $this->Posting_model->addposting_db($data);
+			 json_encode(array("status" => TRUE));
+			 $this->session->set_flashdata('notif','Berhasil menambahkan Posting');
+			 redirect('Hima/dash_hima');
 		}	
 
 		else

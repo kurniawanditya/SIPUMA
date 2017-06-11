@@ -5,11 +5,7 @@ class Dashboard extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('form');
 	  	$this->load->model('Login_model');
-	  	$this->load->library('form_validation');
-	  	$this->load->library('session');
-	  	$this->load->helper('security');
 		$this->load->model('universitas_model');
 		$this->load->model('fakultas_model');
 		$this->load->model('hima_model');
@@ -22,7 +18,7 @@ class Dashboard extends CI_Controller{
 	    $data['username'] = $this->session->userdata('username');
 
 	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
+	      redirect(base_url('LoginHima'));
 	    }
 
 	}

@@ -69,7 +69,7 @@ class Login extends CI_Controller{
 
               }else {
                   $this->session->set_flashdata('notif','Gagal! Username atau password salah');
-                 	redirect(base_url('Loginhima'));
+                 	redirect(base_url('LoginHima'));
               }
         }
 

@@ -62,12 +62,39 @@
 									<i class="clip-list menu-img"></i>
 								</a>
 							</li>
+							
+							<?php
+								if(!empty( $data['username'] = $this->session->userdata('username'))){
+							?>
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="<?php echo base_url(); ?>" data-toggle="dropdown" data-hover="dropdown">
+									<i class="clip-user-4 menu-img"></i>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="<?php echo base_url();?>LoginHima">
+											Profile
+										</a>
+									</li>
+									<li>
+										<a href="<?php echo base_url();?>Login/logout">
+											Keluar
+										</a>
+									</li>
+								</ul>
+								
+							</li>
+							<?php }
+							else{ ?>
 							<li>
 								<a href="<?php echo base_url(); ?>LoginHima">
 									<i class="clip-user-4 menu-img"></i>
 								</a>
 							</li>
-						</ul>
+							<?php
+							} ?>
+							
+						</ul>		
 					</div>
 				</div>
 				<!-- end: TOP NAVIGATION CONTAINER -->

@@ -53,6 +53,7 @@ class C_hima extends CI_Controller {
              			<article>
 							<div class='box-post'>
 								<div class='row'>
+									"; if(!empty($content->posting_image)){ echo"
 									<div class='col-md-12'>
 										<div class='post-image postme'>
 											<center>
@@ -60,6 +61,9 @@ class C_hima extends CI_Controller {
 											</center>
 										</div>
 									</div>
+									";}else{
+
+									}echo "
 									<div class='col-md-12'>
 										<div class='post-content'>
 											<h4>

@@ -6,19 +6,14 @@ class Role extends CI_Controller {
 	public function __construct() 
 	 {
  		parent::__construct();
-		$this->load->helper('url');
- 		$this->load->model('role_model');
- 		$this->load->library('form_validation');
-	  	$this->load->library('session');
-	  	$this->load->helper('security');
-
+ 		$this->load->model('Role_model');
 	  	//Session
 	  	$sudah_login = $this->session->userdata('sudah_login');
 	    $data['role_id'] = $this->session->userdata('role_id');
 	    $data['username'] = $this->session->userdata('username');
 
 	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
+	      redirect(base_url('LoginHima'));
 	    }
 	}
 
@@ -30,7 +25,7 @@ class Role extends CI_Controller {
 	    $data['pages'] = 'Role';
 	    $data['penjelasan'] = ' create,read,update & delete';
 
-		$data['roles']=$this->role_model->get_listrole();
+		$data['roles']=$this->Role_model->get_listrole();
 	    $this->load->view('panel/Header',$data);
 	    $this->load->view('panel/V_index');
 	    $this->load->view('panel/V_role');
@@ -49,7 +44,7 @@ class Role extends CI_Controller {
 				'role_name' => $this->input->post('role_name'),
 				'role_status' => $this->input->post('role_status')
 			);
-			$insert = $this->role_model->addrole_db($data);
+			$insert = $this->Role_model->addrole_db($data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("add", "menambah data role");
 		
@@ -63,7 +58,7 @@ class Role extends CI_Controller {
 
 	public function ajax_edit($id) 
 	{
-		$data = $this->role_model->get_by_id($id);
+		$data = $this->Role_model->get_by_id($id);
 		echo json_encode($data);
 	}
 
@@ -80,7 +75,7 @@ class Role extends CI_Controller {
 				'role_status' => $this->input->post('role_status'),
 				'role_create_at' => $this->input->post('role_create_at')
 			);
-			$this->role_model->updrole_db(array('role_id' => $this->input->post('role_id')), $data);
+			$this->Role_model->updrole_db(array('role_id' => $this->input->post('role_id')), $data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("edit", "mengubah data role");
 		} else {
@@ -93,7 +88,7 @@ class Role extends CI_Controller {
 	}
 
 	public function del_role($id) {
-		$this->role_model->delrole_db($id);
+		$this->Role_model->delrole_db($id);
 		echo json_encode(array("status" => TRUE));
 		$this->helper_log("delete", "menghapus data role");
 	}

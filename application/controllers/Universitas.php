@@ -6,19 +6,16 @@ class Universitas extends CI_Controller {
 	 public function __construct() 
 	 {
  		parent::__construct();
-		$this->load->helper('url');
- 		$this->load->model('universitas_model');
-    	$this->load->library('form_validation');
-    	$this->load->library('session');
-    	$this->load->helper('security');
-
+		
+ 		$this->load->model('Universitas_model');
+    	
     	//Session
 	  	$sudah_login = $this->session->userdata('sudah_login');
 	    $data['role_id'] = $this->session->userdata('role_id');
 	    $data['username'] = $this->session->userdata('username');
 
 	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
+	      redirect(base_url('LoginHima'));
 	    }
 	}
 
@@ -29,7 +26,7 @@ class Universitas extends CI_Controller {
 		$data['title'] = 'SIPUMA | Universitas';
 		$data['pages'] = 'Universitas';
 		$data['penjelasan'] = ' create,read,update & delete';
-		$data['universitas']=$this->universitas_model->get_listuniversitas();
+		$data['universitas']=$this->Universitas_model->get_listuniversitas();
 
 	    $this->load->view('panel/Header',$data);
 	    $this->load->view('panel/V_index');
@@ -50,7 +47,7 @@ class Universitas extends CI_Controller {
 			 'universitas_desc' => $this->input->post('universitas_desc'),
 			 'universitas_status' => $this->input->post('universitas_status'),
 			);
-			 $insert = $this->universitas_model->adduniversitas_db($data);
+			 $insert = $this->Universitas_model->adduniversitas_db($data);
 			 echo json_encode(array("status" => TRUE));
 			 $this->helper_log("add", "menambah data universitas");
 		}
@@ -65,7 +62,7 @@ class Universitas extends CI_Controller {
 
 	public function ajax_edit($id) 
 	{
-		$data = $this->universitas_model->get_by_id($id);
+		$data = $this->Universitas_model->get_by_id($id);
 		echo json_encode($data);
 	}
 
@@ -83,7 +80,7 @@ class Universitas extends CI_Controller {
 		      'universitas_status' => $this->input->post('universitas_status'),
 		      'universitas_create_at' => $this->input->post('universitas_create_at'),
 			);
-			$this->universitas_model->upduniversitas_db(array('universitas_id' => $this->input->post('universitas_id')), $data);
+			$this->Universitas_model->upduniversitas_db(array('universitas_id' => $this->input->post('universitas_id')), $data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("edit", "mengubah data universitas");
 
@@ -99,7 +96,7 @@ class Universitas extends CI_Controller {
 
 	public function del_universitas($id) 
 	{
-		$this->universitas_model->deluniversitas_db($id);
+		$this->Universitas_model->deluniversitas_db($id);
 		echo json_encode(array("status" => TRUE));
 		$this->helper_log("delete", "menghapus data universitas");
 	}

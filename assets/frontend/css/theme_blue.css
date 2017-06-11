@@ -14,20 +14,20 @@ p strong {
 	color: #007AFF;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li.dropdown.open > a {
-	border-bottom-color: #007AFF;
+	/*border-bottom-color: #007AFF;*/
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	border-bottom-color: #007AFF;
 }
 .navbar-nav > li > .dropdown-menu {
-	border-top-color: #007AFF;
+	border-top-color: #fff !important;
 }
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-    background-color: #007AFF;
+    background-color: #fff !important;
 }
 .mega-menu .mega-menu-content ul.sub-menu .active > a {
-	background-color: #007AFF;
+	background-color: #fff !important;
 	color: #FFFFFF;
 }
 .btn-main-color {

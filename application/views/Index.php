@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ol>
-						<div id="results"></div>
+						<div id="results" class="results"></div>
 					</ol>
 				</div>
 			</div>

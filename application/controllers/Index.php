@@ -37,6 +37,7 @@ class Index extends CI_Controller {
 							</div>
 							<div class='box-post'>
 								<div class='row'>
+									"; if(!empty($content->posting_image)){ echo"
 									<div class='col-md-12'>
 										<div class='post-image postme'>
 											<center>
@@ -44,6 +45,9 @@ class Index extends CI_Controller {
 											</center>
 										</div>
 									</div>
+									";}else{
+
+									}echo "
 									<div class='col-md-12'>
 										<div class='post-content'>
 											<h4>

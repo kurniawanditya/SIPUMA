@@ -18,7 +18,7 @@ class fakultas extends CI_Controller {
 	    $data['username'] = $this->session->userdata('username');
 
 	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
+	      redirect(base_url('LoginHima'));
 	    }
 	}
 

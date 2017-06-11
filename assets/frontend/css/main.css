@@ -3013,7 +3013,6 @@ i.menu-img:hover{
 	color:#847d75;
 }
 .logoutama{
-	margin-top:10%;
 }
 .post-header{
     border: 1px solid #e6e6e6;
@@ -3112,6 +3111,7 @@ footer{
     border: 1px solid #e6e6e6;
     border-radius: 3px;
     margin: 10px 0px;
+    padding: 10px;
 }
 .box-post-hima{
 	background-color: #fff;
@@ -3144,6 +3144,10 @@ label.lab{
 	
 	.kiri{
 		display: none !important;
+	}
+	.logoutama {
+		margin:0px 0px 0px 0px !important;
+		max-width: 100px !important;
 	}
 }
 
@@ -3182,6 +3186,10 @@ label.lab{
 	}
 	.kiri{
 		display: block !important;
+	}
+	.logoutama {
+		margin:5% 0px 0px 0px !important;
+		max-width: 200px !important;
 	}
 	
 }
@@ -3259,9 +3267,9 @@ ol {
 	margin-top: 0px;
 	padding: 0px;
 }
-#results{
-	margin-top: 0px;
-	padding: 0px;
+.results{
+	margin-top: 20px !important;
+	margin: 20px 0px 0px 0px !important;
 }
 section.wrapper {
     margin: 0px;
@@ -3270,4 +3278,95 @@ section.wrapper {
 }
 .atas {
 	margin-bottom: 20px;
+}
+img.logohima{
+	max-width: 100px !important;
+}
+.input-group{
+	margin-bottom: 10px !important;
+}
+.form-control, .thumbnail {
+    border-radius: 2px;
+}
+.btn-danger {
+    background-color: #B73333;
+}
+
+/* File Upload */
+.fake-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload #logo-id {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 33px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.img-preview {
+    max-width: 100%;
+}
+
+.form-control, .thumbnail {
+    border-radius: 2px;
+}
+.btn-danger {
+    background-color: #B73333;
+}
+
+/* File Upload */
+.fake-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload #logo-id2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 33px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.img-preview2 {
+    max-width: 100%;
+}
+.header-image{
+	max-height: 250px;
+	overflow: hidden;
+}
+.image-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
 }

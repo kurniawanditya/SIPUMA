@@ -52,6 +52,8 @@ class Hima_model extends CI_Model
 	public function get_himabyid($id){
 		$this->db->select('*');
 		$this->db->from('hima'); 
+		$this->db->join('fakultas','hima.fakultas_id = fakultas.fakultas_id');
+		$this->db->join('universitas','hima.universitas_id = universitas.universitas_id');
 		$this->db->where('hima_id',$id); 
 		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
 		return $query;
@@ -60,6 +62,8 @@ class Hima_model extends CI_Model
 	public function get_himabyuser($id){
 		$this->db->select('*');
 		$this->db->from('hima'); 
+		$this->db->join('fakultas','hima.fakultas_id = fakultas.fakultas_id');
+		$this->db->join('universitas','hima.universitas_id = universitas.universitas_id');
 		$this->db->where('user_id',$id); 
 		$query = $this->db->get(); //simpan database yang udah di get alias ambil ke query
 		return $query;

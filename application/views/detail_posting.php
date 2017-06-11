@@ -16,13 +16,17 @@
 							</div>
 							<div class="box-post">
 								<div class="row">
+									<?php if(!empty($post->posting_image)){ ?>
 									<div class="col-md-12">
 										<div class="post-image detail">
-										<center>
-											<img class="img-responsive" src="<?php echo base_url(); ?>gambar/<?php echo $post->posting_image;?>"/>
-										</center>
+											<center>
+											<img class="img-responsive" src="<?php echo base_url();?>gambar/<?php echo $post->posting_image; ?>" >
+											</center>
 										</div>
 									</div>
+									<?php }else{
+
+									}?>
 									<div class="col-md-12">
 										<div class="post-content">
 											<h4>

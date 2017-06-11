@@ -4,12 +4,8 @@ Class Log extends CI_Controller{
 
     public function __construct() {
         parent::__construct();
-        $this->load->helper('url');
-        $this->load->model('log_model'); 
-        $this->load->library('form_validation');
-        $this->load->library('session');
-        $this->load->helper('security');
-
+        $this->load->model('Log_model'); 
+    
         //Session
         $sudah_login = $this->session->userdata('sudah_login');
         $data['role_id'] = $this->session->userdata('role_id');
@@ -17,7 +13,7 @@ Class Log extends CI_Controller{
 
         // jika $sudah_login == false atau belum login maka akan kembali ke redirect login
         if (!$sudah_login) { 
-          redirect(base_url('Login'));
+          redirect(base_url('LoginHima'));
         }
     }
 
@@ -28,7 +24,7 @@ Class Log extends CI_Controller{
         $data['pages'] = 'Log';
         $data['penjelasan'] = 'read';
 
-        $data['logs']=$this->log_model->get_listlog();
+        $data['logs']=$this->Log_model->get_listlog();
 
         $this->load->view('panel/Header',$data);
         $this->load->view('panel/V_index');

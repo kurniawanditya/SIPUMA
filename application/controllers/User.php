@@ -6,12 +6,9 @@ class User extends CI_Controller {
 	 public function __construct() 
 	 {
  		parent::__construct();
-		$this->load->helper('url');
- 		$this->load->model('user_model');
- 		$this->load->model('role_model');	
-	  	$this->load->library('form_validation');
-	  	$this->load->library('session');
-	  	$this->load->helper('security');
+ 		$this->load->model('User_model');
+ 		$this->load->model('Role_model');	
+	  	
 
 	  	//Session
 	  	$sudah_login = $this->session->userdata('sudah_login');
@@ -19,7 +16,7 @@ class User extends CI_Controller {
 	    $data['username'] = $this->session->userdata('username');
 
 	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
+	      redirect(base_url('LoginHima'));
 	    }
 	}
 
@@ -30,8 +27,8 @@ class User extends CI_Controller {
 	    $data['title'] = 'SIPUMA | User';
 	    $data['pages'] = 'User';
 	    $data['penjelasan'] = 'create,read,update & delete';
-		$data['users']=$this->user_model->get_listuser();
-		$data['roles']=$this->role_model->get_listrole();
+		$data['users']=$this->User_model->get_listuser();
+		$data['roles']=$this->Role_model->get_listrole();
 
 	    $this->load->view('panel/Header',$data);
 	    $this->load->view('panel/V_index');
@@ -44,7 +41,7 @@ class User extends CI_Controller {
 		$data['pages'] = 'User';
 	    $data['penjelasan'] = 'create,read,update & delete';
 	    $data['username'] = $this->session->userdata('username');	    
-		$data['users']=$this->user_model->get_listuser();
+		$data['users']=$this->User_model->get_listuser();
 
 		$this->form_validation->set_rules('username','Username','required|min_length[4]');
 		$this->form_validation->set_rules('password','password','required|min_length[4]');
@@ -59,7 +56,7 @@ class User extends CI_Controller {
 					'role_id' 	  => $this->input->post('role_id'),
 					'user_status' => $this->input->post('user_status'),
 				);
-			$insert = $this->user_model->adduser_db($data);
+			$insert = $this->User_model->adduser_db($data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("add", "menambahkan data user");
 		} 
@@ -75,7 +72,7 @@ class User extends CI_Controller {
 
 	public function ajax_edit($id) 
 	{
-		$data = $this->user_model->get_by_id($id);
+		$data = $this->User_model->get_by_id($id);
 		echo json_encode($data);
 	}
 
@@ -96,7 +93,7 @@ class User extends CI_Controller {
 				'user_status' => $this->input->post('user_status'),
 				'user_create_at' => $this->input->post('user_create_at')
 			);
-			$this->user_model->upduser_db(array('user_id' => $this->input->post('user_id')), $data);
+			$this->User_model->upduser_db(array('user_id' => $this->input->post('user_id')), $data);
 			echo json_encode(array("status" => TRUE));
 			$this->helper_log("edit", "mengubah data user");
 
@@ -112,7 +109,7 @@ class User extends CI_Controller {
 
 	public function del_user($id) 
 	{
-		$this->user_model->deluser_db($id);
+		$this->User_model->deluser_db($id);
 		echo json_encode(array("status" => TRUE));
 		$this->helper_log("delete", "menghapus data user");
 	}
