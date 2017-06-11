@@ -6,6 +6,8 @@ class Loginhima extends CI_Controller{
     function __construct(){
     	  parent::__construct();
       	$this->load->model('Login_model');
+        $this->load->model('Universitas_model');
+        $this->load->model('Fakultas_model');
   	}
 
   //method untuk mengecek apakah sudah login atau belum
@@ -13,6 +15,8 @@ class Loginhima extends CI_Controller{
         $sudah_login = $this->session->userdata('sudah_login');
         $data['role_id'] = $this->session->userdata('role_id');
         $data['username'] = $this->session->userdata('username');
+        $data['univ'] = $this->Universitas_model->get_listuniversitas();
+        $data['fakul'] = $this->Fakultas_model->get_listfakultas();
         $data['title'] = 'SIPUMA | Login Admin';
 
          if(empty($sudah_login))
@@ -113,6 +117,11 @@ class Loginhima extends CI_Controller{
         //save to database
         $CI->Log_model->save_log($param);
    
+    }
+    public function email(){
+
+      $this->load->view('emailtemplate');
+
     }
 
 }

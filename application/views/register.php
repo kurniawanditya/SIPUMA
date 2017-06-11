@@ -35,10 +35,18 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-12">
-												<input type="text" id="name" class="form-control inputan" maxlength="100" data-msg-required="Silahkan isi username anda" value="" name="username" placeholder="Nama Pengguna" required>
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">Email</span>
+													<input type="text" id="name" class="form-control " maxlength="100" data-msg-required="Silahkan isi username anda" value="" name="username" required>
+												</div>
+												
 											</div>
 											<div class="col-md-12">
-												<input type="password" id="password" name="password" class="form-control inputan" maxlength="100" data-msg-required="Kata Sandi Salah" value=""  placeholder="Kata Sandi" required>
+												<div class="input-group">
+													  <span class="input-group-addon" id="basic-addon1">Kata Sandi</span>
+														<input type="password" id="password" name="password" class="form-control " maxlength="100" data-msg-required="Kata Sandi Salah" required>
+													</div>
+												
 											</div>
 										</div>
 									</div>
@@ -62,17 +70,51 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-12 col-sm-12 col-xs-12">
-												<input type="text" id="name" class="form-control inputan" maxlength="100" value="" name="hima_name" placeholder="Nama HIMA" required>
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">Nama Hima</span>
+													<input type="text" id="name" class="form-control" maxlength="100" value="" name="hima_name" required>
+												</div>
 											</div>
 											<div class="col-md-6 col-sm-12 col-xs-12">
-												<input type="email" id="email" name="hima_email" class="form-control inputan" maxlength="100" placeholder="Email HIMA" required>
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">Email</span>
+												  	<input type="email" id="email" name="hima_email" class="form-control" maxlength="100" required>
+												</div>
+												
 											</div>
 											<div class="col-md-6 col-sm-12 col-xs-12">
-												<input type="password" id="email" name="hima_password" class="form-control inputan" maxlength="100" placeholder="Password HIMA" required>
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">password</span>
+												  	<input type="password" id="email" name="hima_password" class="form-control" maxlength="100" required>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12 col-xs-12">
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">Universitas</span>
+												  <select class="form-control" name="hima_univ"  aria-describedby="basic-addon1" required>
+												  	<?php foreach ($univ as $un) { ?>
+												  		<option value="<?php echo $un->universitas_id ?>"><?php echo $un->universitas_name ?></option>
+												  	<?php } ?>
+												  </select>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12 col-xs-12">
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">Fakultas</span>
+												  <select class="form-control" name="hima_fak"  aria-describedby="basic-addon1" required>
+												  	<?php foreach ($fakul as $un) { ?>
+												  		<option value="<?php echo $un->fakultas_id ?>"><?php echo $un->fakultas_name ?></option>
+												  	<?php } ?>
+												  </select>
+												</div>
 											</div>
 
 											<div class="col-md-12 col-sm-12 col-xs-12">
-												<input type="file" name="hima_file" class="form-control inputan" required>
+												<div class="input-group">
+												  <span class="input-group-addon" id="basic-addon1">File </span>
+												  <input type="file" name="hima_file" class="form-control" required>
+												</div>
+												
 											</div>
 											<label class="lab">Sertakan berkas/surat yang mengatakan anda adalah HIMA dari Kampus Anda</label>
 										</div>

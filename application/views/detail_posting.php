@@ -11,7 +11,7 @@
 							  	<div class="row">
 									<div class="col-md-12">
 										<?php 
-							              	if(!empty($hima->hima_img)){?>
+							              	if(!empty($post->hima_img)){?>
 									 			<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/photo-profil/<?php echo $post->hima_img; ?>" />
 							              	<?php }else{?>
 							              		<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/avatar.png" />
@@ -53,7 +53,6 @@
 											<a href="http://www.facebook.com/sharer.php?u=<?php echo base_url();?>Index/detail_posting/<?php echo $post->posting_id; ?>" target="_blank">
 											<button class="btn btn-facebook">
 												<i class="fa fa-facebook"></i>
-												| Share Ke Facebook
 											</button>
 											</a>
 										</div>

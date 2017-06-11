@@ -112,6 +112,8 @@ class C_hima extends CI_Controller {
 		    	'user_id' => $adduserhima,
 		        'hima_name' => $this->input->post('hima_name'),
 		        'hima_email' => $this->input->post('hima_email'),
+		        'universitas_id' => $this->input->post('hima_univ'),
+		        'fakultas_id' => $this->input->post('hima_fak'),
 		        'hima_file' => $himafile['file_name']);
 				$addhima = $this->Hima_model->addhima_db($data);
 			}
@@ -119,7 +121,16 @@ class C_hima extends CI_Controller {
 			//sent email
 			$email = $this->input->post('hima_email');
 			$subject = 'Selamat Datang';
-			$isiemail = 'Silahkan tunggu 2 x 24 jam untuk mendapatkan aktivasi akun anda pada email anda';
+			$isiemail = '<center>
+						<h3>Terima kasih telah mendaftar pada Sipuma</h3>
+						<p>Berikut kami kirimkan nama pengguna dan kata sandi</p>
+						<table>
+							<tr><td>Nama Pengguna : Email</td></tr>
+							<tr><td>Kata Sandi : passwird</td></tr>
+						</table>
+						<p>Simpan Baik-baik nama pengguna dan kata sandi tersebut</p>
+						<b>SIPUMA</b>
+						</center>';
 			$this->Email_model->sendemail($email,$subject,$isiemail);	
 			//end sent email
             redirect(base_url('Loginhima'));

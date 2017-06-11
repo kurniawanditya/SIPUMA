@@ -31,7 +31,13 @@ class Index extends CI_Controller {
              				<div class='post-header'>
 							  	<div class='row'>
 									<div class='col-md-12'>
-										<img class='clip-droplet circle-icon circle-bricky animate' src='".base_url()."assets/frontend/images/photo-profil/".$content->hima_img."'/><a class='namahima' href='".base_url()."C_Hima/detail_hima/".$content->hima_id."'>".$content->hima_name."</a>
+									"; if (!empty($content->hima_img)){?>
+										<img class='circle-icon circle-bricky animate' src='<?php echo base_url();?>assets/frontend/images/photo-profil/<?php echo $content->hima_img;?>'/>
+									<?php }else{?>
+										<img class='circle-icon circle-bricky animate' src='<?php echo base_url();?>assets/frontend/images/avatar.png'/>
+										<?php } ?>
+										<?php echo"
+										<a class='namahima' href='".base_url()."C_Hima/detail_hima/".$content->hima_id."'>".$content->hima_name."</a>
 									</div>
 								</div>
 							</div>
