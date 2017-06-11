@@ -46,6 +46,7 @@ class Hima extends CI_Controller {
 		$data['postingid'] = $this->Hima_model->get_postingbyhima($idhima)->result();
 		$this->load->view('Himadashboard',$data);
 	}
+
 	public function add_hima() {
 		$this->form_validation->set_rules('hima_name','hima name','required|min_length[4]');
 		$this->form_validation->set_rules('hima_desc','hima description','required');
@@ -218,8 +219,8 @@ class Hima extends CI_Controller {
  
 	}
 	public function sendemail(){
-
-		$this->Email_model->sendemail();		
+		$email = 'himasi@mailinator.com';
+		$this->Email_model->sendemail($email);		
 	}
 
 

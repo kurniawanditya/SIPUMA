@@ -12,7 +12,12 @@
 								<div class="col-md-3 col-sm-12 col-xs-12">
 								    <div class="form-group">
 						              <div class="main-img-preview">
+						              <?php 
+						              	if(!empty($hima->hima_img)){?>
 						                <img class="thumbnail img-preview" src="<?php echo base_url()."assets/frontend/images/photo-profil/".$hima->hima_img; ?>" title="Preview Logo">
+
+						              	<?php }
+						              ?>
 						              </div>
 						              <div class="input-group">
 						                <input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Pilih foto" disabled="disabled">
@@ -30,7 +35,12 @@
 								<div class="col-md-9 col-sm-12 col-xs-12">
 								    <div class="form-group">
 						              <div class="main-img-preview">
-						                <img class="thumbnail img-preview2" src="<?php echo base_url()."assets/frontend/images/photo-profil/".$hima->hima_banner; ?>" title="Preview Logo">
+						                <?php 
+						              	if(!empty($hima->hima_banner)){?>
+						                <img class="thumbnail img-preview" src="<?php echo base_url()."assets/frontend/images/photo-profil/".$hima->hima_img; ?>" title="Preview Logo">
+
+						              	<?php }
+						              ?>
 						              </div>
 						              <div class="input-group">
 						                <input id="fakeUploadLogo2" class="form-control fake-shadow" placeholder="Pilih foto" disabled="disabled">
@@ -111,10 +121,10 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-1">
+								<div class="col-md-2">
 									<input type="submit" data-loading-text="Loading..." class="btn btn-main-color" value="Simpan">
 								</div>
-								<div class="col-md-1">
+								<div class="col-md-2">
 									<a class="btn btn-warning"  href="<?php echo base_url(); ?>Hima/dash_hima">Kembali</a>
 								</div>
 							</div>

@@ -10,7 +10,15 @@
 							<div class="post-header">
 							  	<div class="row">
 									<div class="col-md-12">
-										<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/hima/<?php echo $post->hima_img; ?>" /><a class="namahima" href="<?php echo base_url();?>C_Hima/detail_hima/<?php echo $post->hima_id; ?>"><?php echo $post->hima_name?></a>
+										<?php 
+							              	if(!empty($hima->hima_img)){?>
+									 			<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/photo-profil/<?php echo $post->hima_img; ?>" />
+							              	<?php }else{?>
+							              		<img class="clip-droplet circle-icon circle-bricky animate" src="<?php echo base_url();?>assets/frontend/images/avatar.png" />
+							              	<?php }
+							              	?>
+
+										<a class="namahima" href="<?php echo base_url();?>C_Hima/detail_hima/<?php echo $post->hima_id; ?>"><?php echo $post->hima_name?></a>
 									</div>
 								</div>
 							</div>

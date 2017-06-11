@@ -20,7 +20,13 @@
 										<div class="row">
 											<div class="col-md-5">
 												<div class="thumbnail">
-													<img class="img-responsive imghima" src="<?php echo base_url()."assets/frontend/images/photo-profil/".$hima->hima_img; ?>">
+													<?php 
+										              	if(!empty($hima->hima_img)){?>
+												 			<img class="img-responsive imghima" src="<?php echo base_url()."assets/frontend/images/photo-profil/".$hima->hima_img; ?>">
+										              	<?php }else{?>
+										              		<img class="img-responsive imghima" src="<?php echo base_url();?>assets/frontend/images/avatar.png">
+										              	<?php }
+										              ?>
 												</div>
 											</div>
 											<div class="col-md-7">

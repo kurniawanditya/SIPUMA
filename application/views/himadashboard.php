@@ -22,7 +22,14 @@
 					<div class="header-name">
 					 <div class="row">
 					 	<div class="col-md-2 col-sm-6 col-xs-12">
-					 		<img class="img-responsive logohima" src="<?php echo base_url();?>assets/frontend/images/photo-profil/<?php echo $hima->hima_img; ?>">
+					 		<?php 
+			              	if(!empty($hima->hima_img)){?>
+					 			<img class="img-responsive logohima" src="<?php echo base_url();?>assets/frontend/images/photo-profil/<?php echo $hima->hima_img; ?>">
+			              	<?php }else{?>
+			              		<img class="img-responsive logohima" src="<?php echo base_url();?>assets/frontend/images/avatar.png">
+			              	<?php }
+			              ?>
+
 					 	</div>
 					 	<div class="col-md-5 col-sm-6 col-xs-12">
 					 		<h1><?php echo $hima->hima_name; ?></span></h1>

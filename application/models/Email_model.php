@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Email_model extends CI_Model
 {
-	public function sendemail(){
-		$config['protocol']    = 'smtp';
+	public function sendemail($email,$subject,$isiemail){
+	$config['protocol']    = 'smtp';
         $config['smtp_host']    = 'ssl://smtp.gmail.com';
         $config['smtp_port']    = '465';
         $config['smtp_timeout'] = '7';
@@ -16,11 +16,11 @@ class Email_model extends CI_Model
         $config['validation'] = TRUE; // bool whether to validate email or not      
 
         $this->email->initialize($config);
-		$this->email->to('if@mailinator.com');
-		$this->email->from('kurniawanditya11@gmail.com','SIPUMA');
-		$this->email->subject('JUDUL EMAIL (Teks)');
-		$this->email->message('Isi email ditulis disini');
-		$this->email->send();
+        $this->email->to($email);
+        $this->email->from('kurniawanditya11@gmail.com','SIPUMA');
+        $this->email->subject($subject);
+        $this->email->message($isiemail);
+        $this->email->send();
 
         echo $this->email->print_debugger();
 

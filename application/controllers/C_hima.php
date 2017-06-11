@@ -6,6 +6,9 @@ class C_hima extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('Hima_model');
+		$this->load->model('Email_model');
+		$this->load->model('User_model');
+
 	}
 	public function index()
 	{
@@ -82,23 +85,49 @@ class C_hima extends CI_Controller {
         endif; 
     }
 	public function add_hima() {
-		$this->form_validation->set_rules('hima_name','hima name','required|min_length[4]');
-		$this->form_validation->set_rules('hima_email','hima email','required|min_length[12]');
+		$this->form_validation->set_rules('hima_name','hima name','required|min_length[1]');
+		$this->form_validation->set_rules('hima_email','hima email','required|min_length[1]');
 
-		 if($this->form_validation->run()!=false)
-		 {
-			$data = array(
-				'hima_name' =>$this->input->post('hima_name'),
-				'hima_email' => $this->input->post('hima_email'),
-			);
+		 if($this->form_validation->run()!=false){
 
-			$insert = $this->Hima_model->addhima_db($data);
-			echo json_encode(array("status" => TRUE)); 
-			$this->session->set_flashdata('notif','Silahkan tunggu 2x24 jam untuk dapatkan konfirmasi di email anda');
-             redirect(base_url('Loginhima'));
+		 	$config['upload_path']          = './pdf/';
+			$config['allowed_types']        = 'pdf';
+
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('hima_file')){
+		      	$himafile = $this->upload->data();
+			}else{
+				echo "file tidak ada sesuai";
+			}
+				$role_id='2';
+				 $data = array (
+				 	'username' 	  => $this->input->post('hima_email'),
+					'password' 	  => md5($this->input->post('hima_password')),
+					'role_id' 	  => $role_id
+					);
+				 $adduserhima = $this->User_model->adduser_db($data);
+			if ($adduserhima){
+
+		    $data = array (
+		    	'user_id' => $adduserhima,
+		        'hima_name' => $this->input->post('hima_name'),
+		        'hima_email' => $this->input->post('hima_email'),
+		        'hima_file' => $himafile['file_name']);
+				$addhima = $this->Hima_model->addhima_db($data);
+			}
+			$this->session->set_flashdata('notif','Silahkan tunggu 2x24 jam untuk dapatkan konfirmasi');
+			//sent email
+			$email = $this->input->post('hima_email');
+			$subject = 'Selamat Datang';
+			$isiemail = 'Silahkan tunggu 2 x 24 jam untuk mendapatkan aktivasi akun anda pada email anda';
+			$this->Email_model->sendemail($email,$subject,$isiemail);	
+			//end sent email
+            redirect(base_url('Loginhima'));
+
 		}
 		else 
 		{
+			 echo "gagal";
 			  $this->load->view('register');
 		}
 		

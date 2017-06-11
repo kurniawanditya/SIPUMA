@@ -3,6 +3,10 @@
 	<section class="wrapper padding50">
 		<div class="container">
 			<div class="row">
+
+				<?php if (!empty($this->session->flashdata('notif'))){ ?>
+					<div class="alert alert-success" role="alert"><?php echo $this->session->flashdata('notif');?></div><br>
+				<?php } ?>
 				<div class="col-md-4 no-padding no-margin">
 					<div class="kiri">
 						<h1>
@@ -38,7 +42,6 @@
 											</div>
 										</div>
 									</div>
-									<?php echo $this->session->flashdata('notif');?>
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-6 col-sm-12 col-xs-12">
@@ -55,18 +58,21 @@
 								<div class="heading">
           						<span class="heading-subtitle">Daftar sekarang untuk mendapatkan nama pengguna dan kata sandi</span>
 							</div>
-								<?=form_open('C_hima/add_hima',array('class'=>'form-login'));?>
+								<form method="POST" action="<?php echo base_url();?>C_Hima/add_hima"  enctype="multipart/form-data">
 									<div class="row">
 										<div class="form-group">
-											<div class="col-md-12">
+											<div class="col-md-12 col-sm-12 col-xs-12">
 												<input type="text" id="name" class="form-control inputan" maxlength="100" value="" name="hima_name" placeholder="Nama HIMA" required>
 											</div>
-											<div class="col-md-12">
+											<div class="col-md-6 col-sm-12 col-xs-12">
 												<input type="email" id="email" name="hima_email" class="form-control inputan" maxlength="100" placeholder="Email HIMA" required>
 											</div>
+											<div class="col-md-6 col-sm-12 col-xs-12">
+												<input type="password" id="email" name="hima_password" class="form-control inputan" maxlength="100" placeholder="Password HIMA" required>
+											</div>
 
-											<div class="col-md-12">
-												<input type="file" id="password" name="hima_file" class="form-control inputan" maxlength="100" placeholder="Email HIMA" required>
+											<div class="col-md-12 col-sm-12 col-xs-12">
+												<input type="file" name="hima_file" class="form-control inputan" required>
 											</div>
 											<label class="lab">Sertakan berkas/surat yang mengatakan anda adalah HIMA dari Kampus Anda</label>
 										</div>
@@ -82,7 +88,7 @@
 											</div>
 										</div>
 									</div>
-								<?=form_close();?>
+								</form>
 							</div>
 						</div>
 					</div>
