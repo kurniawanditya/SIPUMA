@@ -22,7 +22,7 @@
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1>Dashboard <small>overview &amp; stats </small></h1>
+								<h1>Dashboard</h1>
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -37,8 +37,8 @@
 									<h2><?= $jml_universitas ?> Universitas</h2>
 								</div>
 								<div class="content">Jumlah data Universitas ada <?= $jml_universitas ?> </div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="<?php echo base_url()?>Dashboard">
+									Selengkapnya <i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
@@ -49,8 +49,8 @@
 									<h2><?= $jml_fakultas ?> Fakultas</h2>
 								</div>
 								<div class="content">Jumlah data Fakultas ada <?= $jml_fakultas ?> </div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="<?php echo base_url()?>Fakultas">
+									Selengkapnya <i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
@@ -61,8 +61,8 @@
 									<h2><?= $jml_hima ?> Hima</h2>
 								</div>
 								<div class="content">Jumlah data Hima ada <?= $jml_hima ?> </div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="<?php echo base_url()?>Hima">
+									Selengkapnya <i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
@@ -73,8 +73,8 @@
 									<h2><?= $jml_role ?> Role</h2>
 								</div>
 								<div class="content">Jumlah data Role ada <?= $jml_role ?> </div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="<?php echo base_url()?>Role">
+									Selengkapnya <i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
@@ -85,8 +85,8 @@
 									<h2><?= $jml_user ?> User</h2>
 								</div>
 								<div class="content">Jumlah data User ada <?= $jml_user ?> </div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="<?php echo base_url()?>User">
+									Selengkapnya <i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
