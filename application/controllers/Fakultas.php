@@ -6,12 +6,7 @@ class fakultas extends CI_Controller {
 	 public function __construct()
 	 {
  		parent::__construct();
-		$this->load->helper('url');
  		$this->load->model('fakultas_model');
-	    $this->load->library('form_validation');
-	    $this->load->library('session');
-	    $this->load->helper('security');
-
 	    //Session
 	  	$sudah_login = $this->session->userdata('sudah_login');
 	    $data['role_id'] = $this->session->userdata('role_id');
