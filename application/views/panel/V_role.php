@@ -35,7 +35,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <i class="fa fa-external-link-square"></i>
-                  Data User
+                  Data Role
                 </div>
                 <div class="panel-body">
                   <div class="row">
