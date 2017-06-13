@@ -23,7 +23,7 @@
                 </li>
               </ol>
               <div class="page-header">
-                <h1><?php echo $pages; ?><small><?php echo $penjelasan; ?></small></h1>
+                <h1><?php echo $pages; ?></h1>
               </div>
               <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -41,22 +41,22 @@
                   <div class="row">
                     <div class="col-md-12 space20">
                       <button class="btn btn-primary" onclick="add_hima()">
-                        <i class="glyphicon glyphicon-plus"></i> Add Hima
+                        <i class="glyphicon glyphicon-plus"></i> Tambah Hima
                       </button>
                     </div>
                   </div>
                   <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                     <thead>
                       <tr>
-                        <th>ID Hima</th>
-                            <th>User</th>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th width="60px">ID</th>
+                            <th>Pengguna</th>
+                            <th>Nama</th>
+                            <th>Deskripsi</th>
                             <th>Fakultas</th>
                             <th>Universitas</th>
                             <th>Status</th>
-                            <th>Create at</th>
-                            <th>Action</p></th>
+                            <th>Buat di</th>
+                            <th>Aksi</p></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -75,7 +75,7 @@
                                    <i class="fa fa-pencil"></i> Edit
                                 </a>
                                 <a class="btn btn-xs btn-bricky" onclick="del_hima(<?php echo $hima->hima_id;?>)">
-                                  <i class="fa fa-trash-o"></i> Delete
+                                  <i class="fa fa-trash-o"></i> Hapus
                                 </a>
 
                                 </td>
@@ -109,7 +109,7 @@
       save_method = 'add';
       $('#formhima')[0].reset(); // reset form on modals
       $('#modal_form').modal('show'); // show bootstrap modal
-    //$('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
+      $('.modal-title').text('Tambah HIMA'); // Set Title to Bootstrap modal title
     }
 
     function upd_hima(id)
@@ -136,7 +136,7 @@
 
 
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-            $('.modal-title').text('Edit hima'); // Set title to Bootstrap modal title
+            $('.modal-title').text('Edit HIMA'); // Set title to Bootstrap modal title
 
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -174,14 +174,14 @@
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
-                alert('You have some errors. Please check below.');
+                alert('Anda memiliki beberapa kesalahan Silakan cek di bawah ini.');
             }
         });
     }
 
     function del_hima(id)
     {
-      if(confirm('Are you sure delete this data?'))
+      if(confirm('Apa anda yakin akan menghapus data ini ?'))
       {
         // ajax delete data from database
           $.ajax({
@@ -210,7 +210,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title"><i class="fa fa-plus-square teal"></i> Hima Form</h3>
+        <h3 class="modal-title"><i class="fa fa-plus-square teal"></i></h3>
       </div>
       <div class="modal-body form">
           <!-- start: FORM VALIDATION 1 PANEL -->
@@ -220,17 +220,17 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="errorHandler alert alert-danger no-display">
-                          <i class="fa fa-times-sign"></i> You have some form errors. Please check below.
+                          <i class="fa fa-times-sign"></i> Anda memiliki beberapa kesalahan Silakan cek di bawah ini.
                         </div>
                         <div class="successHandler alert alert-success no-display">
-                          <i class="fa fa-ok"></i> Your form validation is successful!
+                          <i class="fa fa-ok"></i> Anda berhasil mengisi form dengan benar.
                         </div>
                       </div>
                       <!-- INPUT USER-->
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="control-label">
-                            User <span class="symbol required"></span>
+                            Pengguna <span class="symbol required"></span>
                           </label>
                           <select name="user_id" placeholder="Pick user" class="form-control">
                             <?php foreach($users as $user){?>
@@ -241,16 +241,16 @@
                         <!-- INPUT NAME HIMA-->
                         <div class="form-group">
                           <label class="control-label">
-                            Name <span class="symbol required"></span>
+                            Nama HIMA <span class="symbol required"></span>
                           </label>
-                          <input type="text" placeholder="Insert your HIMA name" class="form-control" id="hima_name" name="hima_name">
+                          <input type="text" placeholder="Masukan nama HIMA" class="form-control" id="hima_name" name="hima_name">
                         </div>
                         <!-- INPUT DESCRIPTION-->
                         <div class="form-group">
                           <label class="control-label">
-                            Description <span class="symbol required"></span>
+                            Deskripsi <span class="symbol required"></span>
                           </label>
-                          <textarea name="hima_desc" placeholder="Insert your description" class="autosize form-control" id="form-field-24" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;"></textarea>
+                          <textarea name="hima_desc" placeholder="Masukan deskripsi" class="autosize form-control" id="form-field-24" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;"></textarea>
                         </div>
                         <!-- INPUT FAKULTAS-->
                         <div class="form-group">
