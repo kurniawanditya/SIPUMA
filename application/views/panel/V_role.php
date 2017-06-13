@@ -23,7 +23,7 @@
                 </li>
               </ol>
               <div class="page-header">
-                <h1><?php echo $pages; ?><small><?php echo $penjelasan; ?></small></h1>
+                <h1><?php echo $pages; ?></h1>
               </div>
               <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -41,18 +41,18 @@
                   <div class="row">
                     <div class="col-md-12 space20">
                       <button class="btn btn-primary" onclick="add_role()">
-                        <i class="glyphicon glyphicon-plus"></i> Add Role
+                        <i class="glyphicon glyphicon-plus"></i> Tambah Role
                       </button>
                     </div>
                   </div>
                   <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                     <thead>
                       <tr>
-                        <th>ID Role</th>
-                            <th>Name</th>
+                            <th width="60px">ID </th>
+                            <th>Nama</th>
                             <th>Status</th>
-                            <th>Create at</th>
-                            <th>Action</p></th>
+                            <th>Buat di</th>
+                            <th>Aksi</p></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -71,7 +71,7 @@
                                    <i class="fa fa-pencil"></i> Edit
                                 </a>
                                 <a class="btn btn-xs btn-bricky" onclick="del_role(<?php echo $role->role_id; ?>)">
-                                  <i class="fa fa-trash-o"></i> Delete
+                                  <i class="fa fa-trash-o"></i> Hapus
                                 </a>
 
                                 </td>
@@ -103,7 +103,7 @@
       save_method = 'add';
       $('#formrole')[0].reset(); // reset form on modals
       $('#modal_form').modal('show'); // show bootstrap modal
-    //$('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
+      $('.modal-title').text('Tambah Role'); // Set Title to Bootstrap modal title
     }
 
     function upd_role(id)
@@ -164,14 +164,14 @@
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
-                alert('You have some errors. Please check below.');
+                alert('Anda memiliki beberapa kesalahan Silakan cek di bawah ini.');
             }
         });
     }
 
     function del_role(id)
     {
-      if(confirm('Are you sure delete this data?'))
+      if(confirm('Apa anda yakin akan menghapus data ini ?'))
       {
         // ajax delete data from database
           $.ajax({
@@ -200,7 +200,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3><i class="fa fa-pencil-square teal"></i> Form Add Role</h3>
+        <h3 class="modal-title"><i class="fa fa-plus-square teal"></i> </h3>
       </div>
       <div class="modal-body form">
         <!-- start: FORM VALIDATION 1 PANEL -->
@@ -210,10 +210,10 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="errorHandler alert alert-danger no-display">
-                          <i class="fa fa-times-sign"></i> You have some form errors. Please check below.
+                          <i class="fa fa-times-sign"></i> Anda memiliki beberapa kesalahan Silakan cek di bawah ini.
                         </div>
                         <div class="successHandler alert alert-success no-display">
-                          <i class="fa fa-ok"></i> Your form validation is successful!
+                          <i class="fa fa-ok"></i> Anda berhasil mengisi form dengan benar.
                         </div>
                       </div>
                       <!-- INPUT ROLE NAME-->
@@ -222,7 +222,7 @@
                           <label class="control-label">
                             Role <span class="symbol required"></span>
                           </label>
-                          <input type="text" placeholder="Insert your role name" class="form-control" id="role_name" name="role_name">
+                          <input type="text" placeholder="Masukan nama role" class="form-control" id="role_name" name="role_name">
                         </div>
                         <!-- INPUT STATUS-->
                         <div class="form-group">
