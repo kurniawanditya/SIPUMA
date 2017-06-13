@@ -52,6 +52,10 @@
                             <th>Pengguna</th>
                             <th>Nama</th>
                             <th>Deskripsi</th>
+                            <th>Email</th>
+                            <th>Logo</th>
+                            <th>Banner</th>
+                            <th>File</th>
                             <th>Fakultas</th>
                             <th>Universitas</th>
                             <th>Status</th>
@@ -66,6 +70,10 @@
                                 <td><?php echo strtoupper($hima->username); ?></td>
                                 <td><?php echo strtoupper($hima->hima_name); ?></td>
                                 <td><?php echo $hima->hima_desc; ?></td>
+                                <td><?php echo $hima->hima_email; ?></td>
+                                <td><img width="60px" src="assets/frontend/images/hima/<?php echo $hima->hima_img; ?>" /></td>
+                                <td><?php echo $hima->hima_banner; ?></td>
+                                <td><?php echo $hima->hima_file; ?></td>
                                 <td><?php echo strtoupper($hima->fakultas_name); ?></td>
                                 <td><?php echo strtoupper($hima->universitas_name); ?></td>
                                 <td><?php echo $hima->hima_status; ?></td>
