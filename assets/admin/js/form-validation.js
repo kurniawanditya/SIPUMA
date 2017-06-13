@@ -59,43 +59,11 @@ var FormValidator = function () {
                 password: {
                     minlength: 4,
                     required: true
-                },
-                password_again: {
-                    required: true,
-                    minlength: 6,
-                    equalTo: "#password"
-                },
-                yyyy: "FullDate",
-                gender: {
-                    required: true
-                },
-                zipcode: {
-                    required: true,
-                    number: true,
-                    minlength: 5,
-                    minlength: 5
-                },
-                city: {
-                    required: true
-                },
-                newsletter: {
-                    required: true
                 }
             },
             messages: {
-                username:    "Please specify your username",
-                password:    "Please specify your password",
-                username:    "Please specify your username",
-                user_status: "Please pick your status",
-
-                role_name:    "Please specify your role name, minlength 4",
-
-                lastname:    "Please specify your last name",
-                email: {
-                    required: "We need your email address to contact you",
-                    email: "Your email address must be in the format of name@domain.com"
-                },
-                gender: "Please check a gender!"
+                username:    "Mohon tentukan nama pengguna, minimal 4 karakter",
+                password:    "Mohon tentukan password, minimal 4 karakter",
             },
             groups: {
                 DateofBirth: "dd mm yyyy",
@@ -166,7 +134,7 @@ var FormValidator = function () {
                 }
             },
             messages: {
-                role_name:    "Please specify your role name, minlength 4"
+                role_name:    "Mohon tentukan nama role, minimal 4 karakter"
             },
 
             invalidHandler: function (event, validator) { //display error alert on form submit
@@ -238,8 +206,8 @@ var FormValidator = function () {
                 }
             },
             messages: {
-                fakultas_name:    "Please specify your fakultas name, minlength 4",
-                fakultas_desc:    "Please specify your description"
+                fakultas_name:    "Mohon tentukan nama fakultas, minimal 4 karakter",
+                fakultas_desc:    "Mohon tentukan deskripsi"
             },
 
             invalidHandler: function (event, validator) { //display error alert on form submit
@@ -312,8 +280,8 @@ var FormValidator = function () {
                 }
             },
             messages: {
-                universitas_name:    "Please specify your universitas name, minlength 3",
-                universitas_desc:    "Please specify your description"
+                universitas_name:    "Mohon tentukan nama universitas, minimal 3 karakter",
+                universitas_desc:    "Mohon tentukan deskripsi"
             },
 
             invalidHandler: function (event, validator) { //display error alert on form submit
@@ -394,8 +362,8 @@ var FormValidator = function () {
                 }
             },
             messages: {
-                hima_name:    "Please specify your HIMA name, minlength 2",
-                hima_desc:    "Please specify your description"
+                hima_name:    "Mohon tentukan nama HIMA, minimal 2 karakter",
+                hima_desc:    "Mohon tentukan deskripsi"
             },
 
             invalidHandler: function (event, validator) { //display error alert on form submit
