@@ -23,7 +23,7 @@
                 </li>
               </ol>
               <div class="page-header">
-                <h1><?php echo $pages; ?><small><?php echo $penjelasan; ?></small></h1>
+                <h1><?php echo $pages; ?></h1>
               </div>
               <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -41,19 +41,19 @@
                   <div class="row">
                     <div class="col-md-12 space20">
                       <button class="btn btn-primary" onclick="add_fakultas()">
-                        <i class="glyphicon glyphicon-plus"></i> Add Fakultas
+                        <i class="glyphicon glyphicon-plus"></i> Tambah Fakultas
                       </button>
                     </div>
                   </div>
                   <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                     <thead>
                       <tr>
-                        <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th width="60px">ID</th>
+                            <th>Nama</th>
+                            <th>Deskripsi</th>
                             <th>Status</th>
-                            <th width="150px">Create at</th>
-                            <th width="150px">Action</p></th>
+                            <th width="150px">Buat di</th>
+                            <th width="150px">Aksi</p></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -70,7 +70,7 @@
                                    <i class="fa fa-pencil"></i> Edit
                                 </a>
                                 <a class="btn btn-xs btn-bricky" onclick="del_fakultas(<?php echo $f->fakultas_id;?>)">
-                                  <i class="fa fa-trash-o"></i> Delete
+                                  <i class="fa fa-trash-o"></i> Hapus
                                 </a>
 
                                 </td>
@@ -103,7 +103,7 @@
       save_method = 'add';
       $('#formfakultas')[0].reset(); // reset form on modals
       $('#modal_form').modal('show'); // show bootstrap modal
-    //$('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
+      $('.modal-title').text('Tambah Fakultas'); // Set Title to Bootstrap modal title
     }
 
     function upd_fakultas(id)
@@ -127,7 +127,7 @@
 
 
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-            $('.modal-title').text('Edit User'); // Set title to Bootstrap modal title
+            $('.modal-title').text('Edit Fakultas'); // Set title to Bootstrap modal title
 
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -165,14 +165,14 @@
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
-                alert('You have some errors. Please check below.');
+                alert('Anda memiliki beberapa kesalahan Silakan cek di bawah ini.');
             }
         });
     }
 
     function del_fakultas(id)
     {
-      if(confirm('Are you sure delete this data?'))
+      if(confirm('Apa anda yakin akan menghapus data ini ?'))
       {
         // ajax delete data from database
           $.ajax({
@@ -201,7 +201,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title"><i class="fa fa-plus-square teal"></i> Fakultas Form</h3>
+        <h3 class="modal-title"><i class="fa fa-plus-square teal"></i> </h3>
       </div>
       <div class="modal-body form">
           <!-- start: FORM VALIDATION 1 PANEL -->
@@ -211,26 +211,26 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="errorHandler alert alert-danger no-display">
-                          <i class="fa fa-times-sign"></i> You have some form errors. Please check below.
+                          <i class="fa fa-times-sign"></i> Anda memiliki beberapa kesalahan Silakan cek di bawah ini.
                         </div>
                         <div class="successHandler alert alert-success no-display">
-                          <i class="fa fa-ok"></i> Your form validation is successful!
+                          <i class="fa fa-ok"></i> Anda berhasil mengisi form dengan benar.
                         </div>
                       </div>
                       <!-- INPUT USERNAME-->
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="control-label">
-                            Name <span class="symbol required"></span>
+                            Nama <span class="symbol required"></span>
                           </label>
-                          <input type="text" placeholder="Insert your fakultas name" class="form-control" id="fakultas_name" name="fakultas_name">
+                          <input type="text" placeholder="Masukan nama Fakultas" class="form-control" id="fakultas_name" name="fakultas_name">
                         </div>
                         <!-- INPUT DESCRIPTION-->
                         <div class="form-group">
                           <label class="control-label">
-                            Description <span class="symbol required"></span>
+                            Deskripsi <span class="symbol required"></span>
                           </label>
-                          <textarea name="fakultas_desc" cplaceholder="Insert your description" class="autosize form-control" id="form-field-24" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;"></textarea>
+                          <textarea name="fakultas_desc" placeholder="Masukan deskripsi" class="autosize form-control" id="form-field-24" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;"></textarea>
                         </div>
                         <!-- INPUT STATUS-->
                         <div class="form-group">
