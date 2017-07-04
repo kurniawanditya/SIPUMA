@@ -260,14 +260,14 @@
                         <!-- INPUT Title-->
                         <div class="form-group">
                           <label class="control-label">
-                            Title <span class="symbol required"></span>
+                            Judul <span class="symbol required"></span>
                           </label>
                           <input type="text" disabled="disabled"  class="form-control" id="posting_title" name="posting_title">
                         </div>
                         <!-- INPUT Description-->
                         <div class="form-group">
                           <label class="control-label">
-                            Description <span class="symbol required"></span>
+                            Deskripsi <span class="symbol required"></span>
                           </label>
                           <textarea name="posting_description" disabled="disabled"  class="form-control"></textarea>
                         </div>
