@@ -38,13 +38,13 @@
                   Data Hima
                 </div>
                 <div class="panel-body">
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-md-12 space20">
                       <button class="btn btn-primary" onclick="add_hima()">
-                        <i class="glyphicon glyphicon-plus"></i> Tambah Hima
+                         <i class="glyphicon glyphicon-plus"></i> Tambah Hima
                       </button>
                     </div>
-                  </div>
+                  </div> -->
                   <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                     <thead>
                       <tr>
@@ -60,7 +60,7 @@
                             <th>Universitas</th>
                             <th>Status</th>
                             <th>Buat di</th>
-                            <th>Aksi</p></th>
+                            <!-- <th>Aksi</p></th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -78,7 +78,7 @@
                                 <td><?php echo strtoupper($hima->universitas_name); ?></td>
                                 <td><?php echo $hima->hima_status; ?></td>
                                 <td><?php echo $hima->hima_create_at; ?></td>
-                                <td>
+                                <!-- <td>
                                 <a class="btn btn-xs btn-primary" onclick="upd_hima(<?php echo $hima->hima_id;?>)">
                                    <i class="fa fa-pencil"></i> Edit
                                 </a>
@@ -86,7 +86,7 @@
                                   <i class="fa fa-trash-o"></i> Hapus
                                 </a>
 
-                                </td>
+                              </td> -->
 
 
                               </tr>
@@ -293,9 +293,9 @@
                           </select>
                         </div>
                       </div>
-                      
+
                     </div>
-             
+
           </div>
           <div class="modal-footer">
               <p align="left">

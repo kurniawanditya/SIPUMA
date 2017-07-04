@@ -39,14 +39,14 @@
 												  <span class="input-group-addon" id="basic-addon1">Nama Pengguna</span>
 													<input type="text" id="name" class="form-control " maxlength="100" data-msg-required="Silahkan isi username anda" value="" name="username" required>
 												</div>
-												
+
 											</div>
 											<div class="col-md-12">
 												<div class="input-group">
-													  <span class="input-group-addon" id="basic-addon1">Nama Hima</span>
+													  <span class="input-group-addon" id="basic-addon1">Kata Sandi</span>
 														<input type="password" id="password" name="password" class="form-control " maxlength="100" data-msg-required="Kata Sandi Salah" required>
 													</div>
-												
+
 											</div>
 										</div>
 									</div>
@@ -80,7 +80,7 @@
 												  <span class="input-group-addon" id="basic-addon1">Email</span>
 												  	<input type="email" id="email" name="hima_email" class="form-control" maxlength="100" required>
 												</div>
-												
+
 											</div>
 											<div class="col-md-6 col-sm-12 col-xs-12">
 												<div class="input-group">
@@ -114,7 +114,7 @@
 												  <span class="input-group-addon" id="basic-addon1">File </span>
 												  <input type="file" name="hima_file" class="form-control" required>
 												</div>
-												
+
 											</div>
 											<label class="lab">Sertakan berkas/surat yang mengatakan anda adalah HIMA dari Kampus Anda</label>
 										</div>

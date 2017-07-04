@@ -16,25 +16,11 @@
 								<span class="title"> Dashboard </span><span class="selected"></span>
 							</a>
 						</li>
-						<li>
-							<a href="javascript:void(0)"><i class="clip-screen"></i>
-								<span class="title">Posting </span><i class="icon-arrow"></i>
-								<span class="selected"></span>
-							</a>
-							<ul class="sub-menu">
-								<li>
-									<a href="#">
-										<span class="title"> Buat Baru </span>
-										<span class="badge badge-new">new</span>
-									</a>
-								</li>
 
-								<li>
-									<a href="<?php echo base_url()?>Posting">
-										<span class="title">Semua Konten</span>
-									</a>
-								</li>
-							</ul>
+						<li>
+							<a href="<?php echo base_url()?>Posting"><i class="clip-screen"></i>
+								<span class="title"> Posting </span><span class="selected"></span>
+							</a>
 						</li>
 						<li>
 							<a href="<?php echo base_url()?>Hima"><i class="clip-users"></i>

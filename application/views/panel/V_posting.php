@@ -41,7 +41,7 @@
                 </li>
               </ol>
               <div class="page-header">
-                <h1><?php echo $pages; ?><small><?php echo $penjelasan; ?></small></h1>
+                <h1><?php echo $pages; ?></h1>
               </div>
               <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -68,12 +68,12 @@
                       <tr>
                             <th width="60px">ID</th>
                             <th width="80px">Hima</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Image</th>
+                            <th>Judul</th>
+                            <th>Deskripsi</th>
+                            <th>Gambar</th>
                             <th>Status</th>
-                            <th width="100px">Create at</th>
-                            <th width="190px">Action</th>
+                            <th width="100px">Buat di</th>
+                            <th width="190px">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -83,8 +83,8 @@
                                 <td><?php echo $p->hima_name; ?></td>
                                 <td><?php echo $p->posting_title; ?></td>
                                 <td><?php echo character_limiter($p->posting_description,150) ?></td>
-                                <td><img width="60px" src="uploads/<?php echo $p->posting_image; ?>" /></td>
-                                <td><?php echo $p->posting_status; ?></td> 
+                                <td><img width="60px" src="gambar/<?php echo $p->posting_image; ?>" /></td>
+                                <td><?php echo $p->posting_status; ?></td>
                                 <td><?php echo $p->posting_create_at; ?></td>
                                 <td>
                                   <!--
@@ -95,7 +95,7 @@
                                    <i class="fa fa-pencil"></i> Edit Status
                                 </a>
                                 <a class="btn btn-xs btn-bricky" onclick="del_posting(<?php echo $p->posting_id;?>)">
-                                  <i class="fa fa-trash-o"></i> Delete
+                                  <i class="fa fa-trash-o"></i> Hapus
                                 </a>
 
                                 </td>
@@ -129,7 +129,7 @@
       save_method = 'add';
       $('#formposting')[0].reset(); // reset form on modals
       $('#modal_form').modal('show'); // show bootstrap modal
-    //$('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
+      $('.modal-title').text('Tambah Posting'); // Set Title to Bootstrap modal title
     }
 
     function upd_posting(id)
@@ -193,14 +193,14 @@
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
-                alert('You have some errors. Please check below.');
+                alert('Anda memiliki beberapa kesalahan Silakan cek di bawah ini.');
             }
         });
     }
 
     function del_posting(id)
     {
-      if(confirm('Are you sure delete this data?'))
+      if(confirm('Apa anda yakin akan menghapus data ini ?'))
       {
         // ajax delete data from database
           $.ajax({
@@ -229,7 +229,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3><i class="fa fa-pencil-square teal"></i>Form Edit Posting</h3>
+          <h3>Form Edit Posting</h3>
       </div>
       <div class="modal-body form">
         <!-- start: FORM VALIDATION 1 PANEL -->
@@ -239,10 +239,10 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="errorHandler alert alert-danger no-display">
-                          <i class="fa fa-times-sign"></i> You have some form errors. Please check below.
+                          <i class="fa fa-times-sign"></i> Anda memiliki beberapa kesalahan Silakan cek di bawah ini.
                         </div>
                         <div class="successHandler alert alert-success no-display">
-                          <i class="fa fa-ok"></i> Your form validation is successful!
+                          <i class="fa fa-ok"></i> Anda berhasil mengisi form dengan benar.
                         </div>
                       </div>
                       <!-- INPUT USERNAME-->
@@ -289,7 +289,7 @@
                           </select>
                         </div>
                       </div>
-                      
+
                     </div>
               <!-- end: FORM VALIDATION 1 PANEL -->
           </div>
@@ -306,4 +306,3 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
   <!-- End Bootstrap modal -->
-
