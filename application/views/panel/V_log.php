@@ -23,7 +23,7 @@
                 </li>
               </ol>
               <div class="page-header">
-                <h1><?php echo $pages; ?><small><?php echo $penjelasan; ?></small></h1>
+                <h1><?php echo $pages; ?></h1>
               </div>
               <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -38,20 +38,20 @@
                   Data Log
                 </div>
                 <div class="panel-body">
-                  <div class="row">
-                    <div class="col-md-12 space20">
+                    <!--<div class="row">
+                   <div class="col-md-12 space20">
                       <a href="<?php echo base_url()?>C_excel/export_excel">
                        <button class="btn btn-primary">
                         <i class="glyphicon glyphicon-plus"></i> Export
                       </button>
                     </a>
-                    </div>
                   </div>
+                  </div>-->
                   <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                     <thead>
                       <tr>
-                        <th>History</th>
-                        <th>Time</th>
+                        <th>Riwayat</th>
+                        <th>Tahun & Waktu</th>
                       </tr>
                     </thead>
                     <tbody>
