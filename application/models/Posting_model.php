@@ -77,7 +77,7 @@ class Posting_model extends CI_Model
 		$this->db->delete($this->table);
 	}
 
-	function getposting($where= ''){
+	function getPosting($where= ''){
 		return $this->db->query("select * from posting $where;");
 	}
 

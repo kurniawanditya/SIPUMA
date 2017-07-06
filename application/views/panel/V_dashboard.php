@@ -33,7 +33,7 @@
 						<div class="col-sm-3">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-user-3 circle-icon circle-green"></i>
+									<i class="clip-home-3 circle-icon circle-green"></i>
 									<h2><?= $jml_universitas ?> Universitas</h2>
 								</div>
 								<div class="content">Jumlah data Universitas ada <?= $jml_universitas ?> </div>
@@ -45,7 +45,7 @@
 						<div class="col-sm-3">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-clip circle-icon circle-teal"></i>
+									<i class="clip-list-3 circle-icon circle-green"></i>
 									<h2><?= $jml_fakultas ?> Fakultas</h2>
 								</div>
 								<div class="content">Jumlah data Fakultas ada <?= $jml_fakultas ?> </div>
@@ -57,7 +57,7 @@
 						<div class="col-sm-3">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-database circle-icon circle-bricky"></i>
+									<i class="clip-users circle-icon circle-bricky"></i>
 									<h2><?= $jml_hima ?> Hima</h2>
 								</div>
 								<div class="content">Jumlah data Hima ada <?= $jml_hima ?> </div>
@@ -69,7 +69,7 @@
 						<div class="col-sm-3">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-database circle-icon circle-bricky"></i>
+									<i class="clip-users-2 circle-icon circle-bricky"></i>
 									<h2><?= $jml_role ?> Role</h2>
 								</div>
 								<div class="content">Jumlah data Role ada <?= $jml_role ?> </div>
@@ -81,7 +81,7 @@
 						<div class="col-sm-3">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-database circle-icon circle-teal"></i>
+									<i class="clip-user circle-icon circle-teal"></i>
 									<h2><?= $jml_user ?> User</h2>
 								</div>
 								<div class="content">Jumlah data User ada <?= $jml_user ?> </div>
@@ -90,10 +90,27 @@
 								</a>
 							</div>
 						</div>
+						<div class="col-sm-3">
+							<div class="core-box">
+								<div class="heading">
+									<i class="clip-file circle-icon circle-teal"></i>
+									<h2><?= $jml_posting ?> Posting</h2>
+								</div>
+								<div class="content">Jumlah data Posting ada <?= $jml_posting ?> </div>
+								<a class="view-more" href="<?php echo base_url()?>Posting">
+									Selengkapnya <i class="clip-arrow-right-2"></i>
+								</a>
+							</div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-						Hallo <?php echo $username ?> anda login sebagai Admin
+						
+						<div class="alert alert-success">
+										<h5><i class="fa fa-check-circle"></i>
+										Hallo <strong><?php echo $username ?></strong> anda login sebagai Admin
+										</h5>
+									</div>
 						</div>
 					</div>
 					<!-- end: PAGE CONTENT-->

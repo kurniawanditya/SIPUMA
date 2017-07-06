@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller{
 		$this->load->model('hima_model');
 		$this->load->model('role_model');
 		$this->load->model('user_model');
+		$this->load->model('posting_model');
 
 		//Session
 		$sudah_login = $this->session->userdata('sudah_login');
@@ -30,11 +31,12 @@ class Dashboard extends CI_Controller{
 	    $data['username'] = $this->session->userdata('username');
 
 		// Jumlah 
-		$universitas = $this->universitas_model->getUniversitas()->num_rows();
-		$fakultas 	 = $this->fakultas_model->getFakultas()->num_rows();
-		$hima 			 = $this->hima_model->getHima()->num_rows();
-		$role 		   = $this->role_model->getRole()->num_rows();
-		$user 		   = $this->user_model->getUser()->num_rows();
+		$universitas 	= $this->universitas_model->getUniversitas()->num_rows();
+		$fakultas 	 	= $this->fakultas_model->getFakultas()->num_rows();
+		$hima 			= $this->hima_model->getHima()->num_rows();
+		$role 		 	= $this->role_model->getRole()->num_rows();
+		$user 		   	= $this->user_model->getUser()->num_rows();
+		$posting 		= $this->posting_model->getPosting()->num_rows();
 
 		$data2 = array(
 			'jml_universitas' => $universitas,
@@ -42,6 +44,7 @@ class Dashboard extends CI_Controller{
 			'jml_hima' 				=> $hima,
 			'jml_role' 				=> $role,
 			'jml_user' 				=> $user,
+			'jml_posting'			=> $posting
 		);
 
 	    $this->load->view('panel/Header',$data,$data2);
